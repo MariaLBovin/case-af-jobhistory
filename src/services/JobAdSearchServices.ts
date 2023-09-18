@@ -34,6 +34,8 @@ export const getJobAds = async (params: IGetJobAds) => {
 	);
 };
 
+// Feature for version 2.0
+
 export const getAd = async (id: string) => {
 	return await get(`ad/${id}`);
 };
