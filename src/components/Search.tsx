@@ -1,5 +1,9 @@
+import { Inputfield } from "./Inputfield";
+
 const Search = () => {
-  return <div>Search</div>;
+  return <div>
+    <Inputfield/>
+   </div>;
 };
 
 export default Search;
