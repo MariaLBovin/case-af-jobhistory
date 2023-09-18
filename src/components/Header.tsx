@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import headerStyles from '../styles/header.module.css';
 
 
@@ -8,7 +9,7 @@ const Header = () => {
     <h1 
     className={headerStyles.h1}
     >
-      Arbetsgivardata
+      <Link to='/'>Arbetsgivardata</Link>
       </h1>
   </header>;
 };
