@@ -1,4 +1,4 @@
-@import './index.css';
+
 
 .header {
     width: 100%;
@@ -16,4 +16,8 @@
     color: white;
     font-weight: 600;
     font-family: "Open Sans";
+}
+.h1 a {
+    color: white; 
+    text-decoration: none; 
 }
