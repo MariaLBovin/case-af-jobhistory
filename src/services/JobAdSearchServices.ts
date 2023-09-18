@@ -30,3 +30,7 @@ export const getJobAds = async (params: IGetJobAds) => {
 		`search?employer=${params.employer}&historical-from=${params.historicalFrom}&historical-to=${params.historicalTo}${REQUEST_SPECCS}`
 	);
 };
+
+export const getAd = async (id: string) => {
+	return await get(`ad/${id}`);
+};
