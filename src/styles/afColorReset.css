@@ -1,0 +1,4 @@
+* {
+  /* Overriding af colors here */
+  --COLOR--BACKGROUND--DEFAULT: green !important;
+}
