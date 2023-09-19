@@ -1,5 +1,5 @@
 
-import { FormInputType, FormInputValidation, FormInputVariation } from '@digi/arbetsformedlingen'
+import { FormInputType, FormInputVariation, FormValidationMessageVariation } from '@digi/arbetsformedlingen'
 import { DigiButton, DigiFormInput, DigiFormValidationMessage } from '@digi/arbetsformedlingen-react'
 import searchStyles from '../styles/search.module.css'
 import { FieldValues, useForm } from 'react-hook-form'
@@ -19,24 +19,23 @@ export const Inputfield = ({handleValue} :IInputfieldProps) => {
     //   } = useForm();
 
     const [userInput, setUserInput] = useState<string | number>('')
+    const [buttonClicked, setButtonClicked] =useState(false)
 
     const handleChange = (e: DigiFormInputCustomEvent<HTMLInputElement>) => {
         setUserInput(e.target.value)
     }
 
     const onSubmit = () => {
+        setButtonClicked(true);
 
         if (userInput !== '') {
             handleValue(userInput);
             setUserInput('');
-          } else {
-            console.log('fältet är tomt');
-            
-            FormInputValidation.ERROR
-          }
+          
         // handleValue(userInput)
         // setUserInput('')
     }
+}
     
 
   return (
@@ -60,13 +59,11 @@ export const Inputfield = ({handleValue} :IInputfieldProps) => {
         <DigiButton slot='button'
         onAfOnClick={onSubmit}
         >Sök</DigiButton>
-        {/* <DigiFormValidationMessage
-        afVariation={FormValidationMessageVariation.SUCCESS}
-        >
-
-        </DigiFormValidationMessage> */}
+      
     </DigiFormInput>    
-    {/* </form> */}
+    {buttonClicked && userInput === '' ? (
+        <DigiFormValidationMessage afVariation={FormValidationMessageVariation.ERROR}>Fältet får inte vara tomt</DigiFormValidationMessage>
+      ) : null}
     </div>
     
 </>
