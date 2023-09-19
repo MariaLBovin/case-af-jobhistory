@@ -1,0 +1,16 @@
+.dateSelectorContainer {
+  /* display: flex;
+  flex-direction: row; */
+  width: 100%;
+  /* justify-content: space-between; */
+}
+
+.dateSelectorContainer:nth-child(1) {
+  display: block;
+}
+
+:root {
+  /* Fix width on datepicker so icon is showed*/
+  /* --digi--datepicker--input-icon--width: None; */
+  --digi--form-input--padding: None !important;
+}

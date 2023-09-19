@@ -71,4 +71,5 @@
   --digi--color--icons--warning: #ffe200;
   --digi--color--icons--danger: #da0000;
   --digi--color--icons--informative: #0000ff;
+  --digi--icon--color: var(--digi--color--icons--primary);
 }
