@@ -21,7 +21,7 @@ export const Inputfield = ({handleValue} :IInputfieldProps) => {
  
 
     const onSubmit = () => {
-        if (userInput === '') {
+        if (userInput.trim().length < 2) {
           setButtonClicked(true);
         } else {
           handleValue(userInput);
