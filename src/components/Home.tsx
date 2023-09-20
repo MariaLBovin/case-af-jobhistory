@@ -1,7 +1,10 @@
-
+import SearchResults from "./SearchResults";
 
 const Home = () => {
-  return <div></div>;
+  return <div>
+    <SearchResults></SearchResults>
+  </div>;
 };
+
 
 export default Home;

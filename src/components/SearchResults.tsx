@@ -1,5 +1,6 @@
 import { IAd } from "@/models/IAd";
 import { Link } from "react-router-dom";
+import listStyle from '../styles/displaySearchReslut.module.css'
 
 const newAd1: IAd = {
   id: "12345",
@@ -81,14 +82,17 @@ const ads :IAd[] = [newAd1, newAd2]
 
 const SearchResults = () => {
   return <>
-  SearchResults
+  
   <ul>
    {ads.map((ad,index)=> (
-    <li key={index}>
+    <li key={index} 
+    className={listStyle.li}
+    > 
+      <Link to={'lägg till adress'}>
       <h3>{ad.employer.name}</h3>
       <p>{ad.occupation.label}</p>
       <p>Publiceringsdatum {ad.publication_date}</p>
-      <Link to={'addera länk'}></Link>
+      </Link>
     </li>
    ))}
   </ul>

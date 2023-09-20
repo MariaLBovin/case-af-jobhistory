@@ -1,0 +1,10 @@
+.li {
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+}
+.li a {
+    color: black;
+    cursor: pointer;
+
+}
