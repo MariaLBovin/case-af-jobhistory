@@ -1,4 +1,6 @@
-* {
-  /* Overriding af colors here */
-  --COLOR--BACKGROUND--DEFAULT: green !important;
+/* Overriding af colors here */
+:root {
+  --digi--color--text--secondary: #113f09; /* updated */
+  --digi--color--background--inverted-1: #f7b85a; /* updated */
+  --digi--color--background--inverted-6: #f9b34b; /* updated */
 }
