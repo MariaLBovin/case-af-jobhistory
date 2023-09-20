@@ -2,9 +2,15 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
 @import "./afColorReset.css";
 
-* {
-  box-sizing: border-box;
+:root {
+  --digi--datepicker--input-icon--width: 2rem;
 }
+
+/* *,
+*::before,
+*::after {
+  box-sizing: border-box;
+} */
 
 body {
   margin: 0;
