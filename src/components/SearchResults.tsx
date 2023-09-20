@@ -2,9 +2,10 @@ import { IAd } from "@/models/IAd";
 import { Link } from "react-router-dom";
 import listStyle from '../styles/displaySearchReslut.module.css'
 import { FormSelectVariation, FormSelectValidation } from "@digi/arbetsformedlingen";
-import { DigiFormSelect } from "@digi/arbetsformedlingen-react";
+import { DigiFormSelect, DigiNavigationPagination } from "@digi/arbetsformedlingen-react";
 import { useState } from "react";
 import { DigiFormSelectCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
+import { ResultList } from "./ResultList";
 
 const newAd1: IAd = {
   id: "12345",
@@ -87,36 +88,34 @@ const ads :IAd[] = [newAd1, newAd2]
 const SearchResults = () => {
   const [results, setResults] = useState<number>(1)
 
-  const filteredAds = ads.slice(0, results);
-
   const handleResults = (e :DigiFormSelectCustomEvent<HTMLSelectElement>) => {
     setResults(parseInt(e.target.value))
   }
   
   return <>
   <DigiFormSelect
-	afLabel="Visa antal träffar"
-	afVariation={FormSelectVariation.SMALL} 
-	afValidation={FormSelectValidation.NEUTRAL}	 
-  className={listStyle.test}
-  onAfOnChange={handleResults}	 	  
-	>
-	<option value="1">10</option>
-	<option value="2">25</option>
-</DigiFormSelect>
-  <ul>
-   {filteredAds.map((ad,index)=> (
-    <li key={index} 
-    className={listStyle.li}
-    > 
-      <Link to={'lägg till adress'}>
-      <h3>{ad.employer.name}</h3>
-      <p>{ad.occupation.label}</p>
-      <p>Publiceringsdatum {ad.publication_date}</p>
-      </Link>
-    </li>
-   ))}
-  </ul>
+    afLabel="Visa antal träffar"
+    afVariation={FormSelectVariation.SMALL} 
+    afValidation={FormSelectValidation.NEUTRAL}	 
+    className={listStyle.test}
+    onAfOnChange={handleResults}	 	  
+    >
+    <option value="1">10</option>
+    <option value="2">25</option>
+  </DigiFormSelect>
+  <ResultList 
+    ads={ads} 
+    resultsPerPage={results}
+  ></ResultList>
+  <DigiNavigationPagination
+    afTotalPages={6}
+    afInitActive-page={1}
+    afCurrentResultStart={1}
+    afCurrentResultEnd={25}
+    afTotalResults={10}
+    afResultName="annonser"
+>
+</DigiNavigationPagination>
   </>;
 };
 
