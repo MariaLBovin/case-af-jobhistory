@@ -4,10 +4,13 @@ import Header from "./Header";
 import Search from "./Search";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
+import layoutStyles from "../styles/Layout.module.css";
+import { DigiLayoutContainer } from "@digi/arbetsformedlingen-react";
 
 const Layout = () => {
-  const location = useLocation();
   const [showSearch, setShowSearch] = useState<boolean>(false);
+  const location = useLocation();
+
   useEffect(() => {
     if (
       location.pathname == paths.home ||
@@ -22,9 +25,15 @@ const Layout = () => {
   return (
     <>
       <Header />
-      {showSearch && <Search />}
-      <main>
-        <Outlet />
+      <main
+        className={`${layoutStyles.main_container} ${
+          location.pathname == "/" && layoutStyles.home_green
+        }`}
+      >
+        <DigiLayoutContainer>
+          {showSearch && <Search />}
+          <Outlet />
+        </DigiLayoutContainer>
       </main>
       <Footer />
     </>
