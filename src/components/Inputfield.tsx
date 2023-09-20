@@ -50,7 +50,7 @@ export const Inputfield = ({handleValue} :IInputfieldProps) => {
     </DigiFormInput>
     {buttonClicked && userInput === '' && (
           <DigiFormValidationMessage afVariation={FormValidationMessageVariation.ERROR}>
-            Fältet får inte vara tomt
+            Du behöver ange minst två bokstäver eller siffror för att kunna söka
           </DigiFormValidationMessage>
         )}
     </div>
