@@ -3,9 +3,19 @@ import { DigiCalendarDatepickerCustomEvent } from '@digi/arbetsformedlingen/dist
 
 interface IDateSelectorProps {
 	selectedDate: (date: string) => void;
+	id: string;
+	label: string;
+	maxDate?: Date;
+	minDate?: Date;
 }
 
-export const DateSelector = ({ selectedDate }: IDateSelectorProps) => {
+export const DateSelector = ({
+	selectedDate,
+	id,
+	label,
+	maxDate,
+	minDate,
+}: IDateSelectorProps) => {
 	const handleSelectedDateFrom = (
 		e: DigiCalendarDatepickerCustomEvent<Array<Date>>
 	) => {
@@ -17,9 +27,13 @@ export const DateSelector = ({ selectedDate }: IDateSelectorProps) => {
 	return (
 		<>
 			<DigiCalendarDatepicker
+				id={id}
 				className='date-selector'
 				afShowWeekNumber={false}
-				af-close-on-select={true}
+				afCloseOnSelect={true}
+				afLabel={label}
+				afMaxDate={maxDate}
+				afMinDate={minDate}
 				onAfOnDateChange={handleSelectedDateFrom}
 			></DigiCalendarDatepicker>
 		</>
