@@ -6,17 +6,17 @@ import { useState } from 'react'
 import { DigiFormInputCustomEvent, } from '@digi/arbetsformedlingen/dist/types/components'
 
 interface IInputfieldProps {
-    handleValue: (value: string | number) => void
+    handleValue: (value: string) => void
 }
 
 export const Inputfield = ({handleValue} :IInputfieldProps) => {
 
-    const [userInput, setUserInput] = useState<string | number>('')
+    const [userInput, setUserInput] = useState<string>('')
     const [buttonClicked, setButtonClicked] =useState(false)
     //console.log(buttonClicked);
 
     const handleChange = (e: DigiFormInputCustomEvent<HTMLInputElement>) => {
-        setUserInput(e.target.value)
+        setUserInput(e.target.value.toString())
     }
  
 
