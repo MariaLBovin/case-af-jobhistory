@@ -1,11 +1,5 @@
-import TemplateComponents from "./TemplateComponents";
-
 const Home = () => {
-  return (
-    <div>
-      <TemplateComponents />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Home;

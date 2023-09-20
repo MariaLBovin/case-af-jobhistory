@@ -2,10 +2,6 @@
 @import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
 @import "./afColorReset.css";
 
-/* * {
-  box-sizing: border-box;
-} */
-
 body {
   margin: 0;
   padding: 0;
