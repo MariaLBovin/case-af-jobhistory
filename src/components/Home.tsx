@@ -1,5 +1,6 @@
 import { DigiButton } from "@digi/arbetsformedlingen-react";
 import { ButtonVariation } from "@digi/arbetsformedlingen";
+import SearchResults from "./SearchResults";
 
 const Home = () => {
   const handleClick = () => console.log("You clicked me");
@@ -12,6 +13,7 @@ const Home = () => {
       >
         Klicka
       </DigiButton>
+      <SearchResults></SearchResults>
     </div>
   );
 };
