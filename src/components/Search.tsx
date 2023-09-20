@@ -1,5 +1,14 @@
+import { Inputfield } from "./Inputfield";
+
 const Search = () => {
-  return <div>Search</div>;
+
+  const handleValue = (value: string | number) => {
+    console.log(value);
+    
+  }
+  return <div>
+    <Inputfield handleValue={handleValue}/>
+   </div>;
 };
 
 export default Search;
