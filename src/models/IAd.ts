@@ -10,13 +10,13 @@ interface IEmployer {
 }
 
 interface IMustHave {
-	languages: [];
-	education: [];
+	languages: string[];
+	education: string[];
 }
 
 interface INiceToHave {
-	languages: [];
-	education: [];
+	languages: string[];
+	education: string[];
 }
 
 interface IEmploymentType {
@@ -27,11 +27,13 @@ interface IOccupation {
 	label: string;
 }
 
+
 export interface IAd {
 	id: string;
 	headline: string;
 	application_deadline: string;
 	number_of_vacancies: number;
+	publication_date: string;
 	description: IDescription;
 	employment_type: IEmploymentType;
 	salary_description: string;
