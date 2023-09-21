@@ -1,6 +1,7 @@
 import { teamMembers } from "../arrays/teammembers"
 import { Members } from "./Members"
 
+
 export const Team = () => {
   return (
     <>
