@@ -1,0 +1,40 @@
+.errorWrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+  height: 100dvh;
+
+}
+
+.infoWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #113f09;
+  color: whitesmoke;
+  height: 100%;
+}
+
+.infoWrapper a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.imgWrapper {
+  height: 100dvh;
+}
+
+.giveCreed {
+  position: fixed;
+  bottom: 0;
+  text-decoration: none;
+}
+
+.imgWidth {
+  width: 100%;
+}
+
+.imgHeight {
+  height: auto;
+}
