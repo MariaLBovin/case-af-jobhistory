@@ -1,0 +1,15 @@
+.li {
+    background-color: white;
+    margin: 30px;
+    padding: 20px;
+}
+.li a {
+    color: black;
+    cursor: pointer;
+
+}
+.test {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
