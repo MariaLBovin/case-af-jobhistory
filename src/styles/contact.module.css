@@ -1,0 +1,21 @@
+.li {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin: 30px;
+    height: 100px;
+}
+.article {
+    flex-direction: column;
+    margin-left: 20px
+}
+.img {
+    height: 100%;
+}
+.div {
+    flex-direction: row;
+
+}
+.div img {
+    margin-right: 10px;
+}
