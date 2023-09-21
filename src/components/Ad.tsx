@@ -1,5 +1,5 @@
 const Ad = () => {
-  return <div>Ad</div>;
+	return <article></article>;
 };
 
 export default Ad;

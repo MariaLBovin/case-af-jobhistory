@@ -51,7 +51,7 @@ export const newAd1: IAd = {
 	},
 };
 
-const newAd2: IAd = {
+export const newAd2: IAd = {
 	id: '12345',
 	headline: 'Ledig tjänst',
 	application_deadline: '2023-12-31',
