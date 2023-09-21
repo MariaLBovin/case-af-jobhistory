@@ -8,11 +8,14 @@
     flex-direction: column;
     background-color: #113F09;
 }
+
 .h1 {
   color: white;
   font-weight: 600;
 }
+
 .h1 a {
   color: white;
   text-decoration: none;
 }
+

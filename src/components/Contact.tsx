@@ -1,5 +1,10 @@
+import { Team } from "./Team";
+
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return <>
+  <Team></Team>
+  </>;
 };
 
 export default Contact;
