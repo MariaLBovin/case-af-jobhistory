@@ -1,19 +1,19 @@
 import { TeamMembers } from "../models/TeammemberClass";
 
 export const teamMembers: TeamMembers[] = [
+  new TeamMembers
+  ('Björn Sjöstedt', 
+  'bjorn.sjostedt@medieinstitutet.se', 
+  'https://github.com/etrigo', 
+  '/bjornsjostedt.jpg',
+  'https://www.linkedin.com/in/bjornsjostedt/'
+  ),
     new TeamMembers
     ('Joel Del Pilar', 
     'joel.delpilar@medieinstitutet.se', 
     'https://github.com/JoeldelPilar', 
     '/joeldelpilar.jpg',
     'https://www.linkedin.com/in/joeldelpilar/' 
-    ),
-    new TeamMembers
-    ('Björn Sjöstedt', 
-    'bjorn.sjostedt@medieinstitutet.se', 
-    'https://github.com/etrigo', 
-    '/bjornsjostedt.jpg',
-    'https://www.linkedin.com/in/bjornsjostedt/'
     ),
     new TeamMembers(
       'Maria Larsson Bovin', 
