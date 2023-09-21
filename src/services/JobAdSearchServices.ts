@@ -1,14 +1,9 @@
 import { IGetJobAdsResponse } from "@/models/IGetJobAdsResponse";
+import { IGetJobAds } from "@/models/IGetJobAds";
 import { get } from "./ServiceBase";
 
 // Base values that pre-filters search results
-const REQUEST_SPECCS = import.meta.env.REQUEST_SPECCS;
-
-export interface IGetJobAds {
-  employer: string;
-  historicalFrom?: string;
-  historicalTo?: string;
-}
+const REQUEST_SPECCS = import.meta.env.VITE_REQUEST_SPECCS;
 
 export const getJobAds = async (params: IGetJobAds) => {
   if ((params.historicalFrom && params.historicalTo) === undefined) {

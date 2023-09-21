@@ -1,19 +1,19 @@
-import { useState } from "react";
-import { IGetJobAds } from "@/services/JobAdSearchServices";
+import { useContext, useState } from "react";
+import { getJobAds } from "../services/JobAdSearchServices";
 import { Inputfield } from "./Inputfield";
-
-export type SearchProps = {
-  handleSubmit: () => void;
-  handleValues: (data: string) => void;
-  currentValue: string;
-};
+import { JobAdsContext } from "../context/JobAdsContext";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
-  const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });
+  const [searchBody, setSearchBody] = useState({ employer: "" });
+  const { setAdsResponse } = useContext(JobAdsContext);
+  const navigate = useNavigate();
 
-  const handleSubmit = () => {
-    console.log("clicked submit, make search request");
-    setSearchBody({ ...searchBody, employer: "" });
+  const handleSubmit = async () => {
+    const response = await getJobAds(searchBody);
+    setAdsResponse(response);
+    // setSearchBody({ ...searchBody, employer: "" });
+    navigate("/search-results");
   };
 
   const handleValues = (data: string) => {

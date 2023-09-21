@@ -5,10 +5,15 @@ import Search from "./Search";
 import Footer from "./Footer";
 import { useEffect, useState } from "react";
 import layoutStyles from "../styles/Layout.module.css";
-import { DigiLayoutContainer } from "@digi/arbetsformedlingen-react";
+import { JobAdsContext } from "../context/JobAdsContext";
+import { IGetJobAdsResponse } from "../models/IGetJobAdsResponse";
 
 const Layout = () => {
   const [showSearch, setShowSearch] = useState<boolean>(false);
+  // const [adsData, setAdsData] = useState<IGetJobAdsResponse>({ hits: [] });
+  const [adsResponse, setAdsResponse] = useState<IGetJobAdsResponse>({
+    hits: [],
+  });
   const location = useLocation();
 
   useEffect(() => {
@@ -25,16 +30,16 @@ const Layout = () => {
   return (
     <>
       <Header />
-      <main
-        className={`${layoutStyles.main_container} ${
-          location.pathname == "/" && layoutStyles.home_green
-        }`}
-      >
-        <DigiLayoutContainer>
+      <JobAdsContext.Provider value={{ adsResponse, setAdsResponse }}>
+        <main
+          className={`${layoutStyles.main_container} ${
+            location.pathname == "/" && layoutStyles.home_green
+          }`}
+        >
           {showSearch && <Search />}
           <Outlet />
-        </DigiLayoutContainer>
-      </main>
+        </main>
+      </JobAdsContext.Provider>
       <Footer />
     </>
   );

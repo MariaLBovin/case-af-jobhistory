@@ -11,13 +11,13 @@ import {
 import searchStyles from "../styles/search.module.css";
 import { useState } from "react";
 import { DigiFormInputCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
-import { SearchProps } from "./Search";
+import { ISearchProps } from "../models/ISearchProps";
 
 export const Inputfield = ({
   handleSubmit,
   handleValues,
   currentValue,
-}: SearchProps) => {
+}: ISearchProps) => {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const handleChange = (e: DigiFormInputCustomEvent<HTMLInputElement>) => {
