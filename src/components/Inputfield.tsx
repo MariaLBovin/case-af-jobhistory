@@ -15,13 +15,13 @@ import { ISearchProps } from "../models/ISearchProps";
 
 export const Inputfield = ({
   handleSubmit,
-  handleValues,
+  handleSearchText,
   currentValue,
 }: ISearchProps) => {
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const handleChange = (e: DigiFormInputCustomEvent<HTMLInputElement>) => {
-    handleValues(e.target.value.toString());
+    handleSearchText(e.target.value.toString());
   };
 
   const onSubmit = () => {

@@ -3,9 +3,11 @@ import { getJobAds } from "../services/JobAdSearchServices";
 import { Inputfield } from "./Inputfield";
 import { JobAdsContext } from "../context/JobAdsContext";
 import { useNavigate } from "react-router-dom";
+import { DatePicker, ISearchDates } from "./DatePicker";
+import { IGetJobAds } from "@/models/IGetJobAds";
 
 const Search = () => {
-  const [searchBody, setSearchBody] = useState({ employer: "" });
+  const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });
   const { setAdsResponse } = useContext(JobAdsContext);
   const navigate = useNavigate();
 
@@ -16,16 +18,24 @@ const Search = () => {
     navigate("/search-results");
   };
 
-  const handleValues = (data: string) => {
+  const handleSearchText = (data: string) => {
     setSearchBody({ ...searchBody, employer: data });
   };
+
+  const handleSelectedDates = (dates: ISearchDates) => {
+    if (dates.from)
+      setSearchBody({ ...searchBody, historicalFrom: dates.from });
+    if (dates.to) setSearchBody({ ...searchBody, historicalTo: dates.to });
+  };
+
   return (
     <div>
       <Inputfield
         handleSubmit={handleSubmit}
-        handleValues={handleValues}
+        handleSearchText={handleSearchText}
         currentValue={searchBody.employer}
       />
+      <DatePicker handleSelectedDates={handleSelectedDates} />
     </div>
   );
 };

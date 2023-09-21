@@ -1,5 +1,5 @@
 export interface ISearchProps {
   handleSubmit: () => void;
-  handleValues: (data: string) => void;
+  handleSearchText: (data: string) => void;
   currentValue: string;
 }
