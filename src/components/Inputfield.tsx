@@ -8,7 +8,7 @@ import {
   DigiFormInput,
   DigiFormValidationMessage,
 } from "@digi/arbetsformedlingen-react";
-import searchStyles from "../styles/search.module.css";
+import inputfieldStyles from "../styles/Inputfield.module.css";
 import { useState } from "react";
 import { DigiFormInputCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { ISearchProps } from "../models/ISearchProps";
@@ -35,7 +35,7 @@ export const Inputfield = ({
 
   return (
     <>
-      <div className={searchStyles.search_container}>
+      <div className={inputfieldStyles.search_container}>
         {/* <form onSubmit={handleSubmit(onSubmit)}> */}
         <DigiFormInput
           afLabel='Sök efter arbetsgivare med namn eller organisationsnummer'
