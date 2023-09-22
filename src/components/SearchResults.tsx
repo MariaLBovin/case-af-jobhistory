@@ -1,5 +1,3 @@
-import { IAd } from "../models/IAd";
-
 import listStyle from "../styles/displaySearchReslut.module.css";
 import {
   FormSelectVariation,
@@ -9,18 +7,21 @@ import {
   DigiFormSelect,
   DigiNavigationPagination,
 } from "@digi/arbetsformedlingen-react";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { DigiFormSelectCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { ResultList } from "./ResultList";
-import { newAd1, newAd2 } from "../arrays/ads";
+import { IJobAdsContext, JobAdsContext } from "../context/JobAdsContext";
 
-const ads: IAd[] = [newAd1, newAd2];
 
 const SearchResults = () => {
-  const [results, setResults] = useState<number>(1);
+  const {adsResponse} =useContext<IJobAdsContext>(JobAdsContext)
+  const hits = adsResponse.hits
+  console.log(hits);
+  
+  const [results, setResults] = useState<number>(10);
   const maximumOfAds = 100;
 
-  const totaltNumberOfAds = ads.length;
+  const totaltNumberOfAds = hits.length;
   const totaltPages = Math.ceil(
     Math.min(totaltNumberOfAds, maximumOfAds) / results
   );
@@ -38,10 +39,11 @@ const SearchResults = () => {
         className={listStyle.test}
         onAfOnChange={handleResults}
       >
-        <option value='1'>10</option>
-        <option value='2'>25</option>
+        <option value='10'>10</option>
+        <option value='20'>25</option>
+        <option value='50'>25</option>
       </DigiFormSelect>
-      <ResultList ads={ads} resultsPerPage={results}></ResultList>
+      <ResultList hits={hits} resultsPerPage={results}></ResultList>
       <DigiNavigationPagination
         afTotalPages={totaltPages}
         afInitActive-page={1}
@@ -54,4 +56,6 @@ const SearchResults = () => {
   );
 };
 
-export default SearchResults;
+ export default SearchResults;
+
+
