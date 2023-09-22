@@ -12,6 +12,13 @@ export const ResultList = ({hits, resultsPerPage}: IResultlistProps) => {
     const endIndex = startIndex + resultsPerPage
 
     const filteredAds = hits.slice(startIndex, endIndex)
+
+    const formatedDate = (dateString : string) :string => {
+      const date = new Date (dateString);
+      return date.toLocaleDateString(undefined)
+
+    }
+    
   return (
     <>
    <ul>
@@ -22,7 +29,7 @@ export const ResultList = ({hits, resultsPerPage}: IResultlistProps) => {
       <Link to={'lägg till adress'}>
       <h3>{ad.employer.name}</h3>
       <p>{ad.occupation.label}</p>
-      <p>Publiceringsdatum {ad.publication_date}</p>
+      <p>Publiceringsdatum {formatedDate(ad.publication_date)}</p>
       </Link>
     </li>
    ))}
