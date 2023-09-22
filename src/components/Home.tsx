@@ -1,8 +1,8 @@
-import SearchResults from "./SearchResults";
+// import SearchResults from "./SearchResults";
 
 const Home = () => {
   return <div>
-    <SearchResults></SearchResults>
+    {/* <SearchResults></SearchResults> */}
   </div>;
 };
 
