@@ -3,16 +3,12 @@ import { Link } from 'react-router-dom';
 import listStyle from '../styles/displaySearchReslut.module.css';
 
 interface IResultlistProps {
-	hits: IAd[];
-	resultsPerPage: number;
+    filteredAds: IAd[],
+    
 }
 
-export const ResultList = ({ hits, resultsPerPage }: IResultlistProps) => {
-	const startIndex = 0;
-	const endIndex = startIndex + resultsPerPage;
-
-	const filteredAds = hits.slice(startIndex, endIndex);
-
+export const ResultList = ({filteredAds}: IResultlistProps) => {
+  
 	const formatedDate = (dateString: string): string => {
 		const date = new Date(dateString);
 		return date.toLocaleDateString(undefined);
