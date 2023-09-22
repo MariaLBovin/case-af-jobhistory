@@ -16,8 +16,7 @@ import { IJobAdsContext, JobAdsContext } from "../context/JobAdsContext";
 const SearchResults = () => {
   const {adsResponse} =useContext<IJobAdsContext>(JobAdsContext)
   const hits = adsResponse.hits
-  console.log(hits);
-  
+
   const [results, setResults] = useState<number>(10);
   const maximumOfAds = 100;
 
