@@ -36,7 +36,6 @@ export const Inputfield = ({
   return (
     <>
       <div className={inputfieldStyles.search_container}>
-        {/* <form onSubmit={handleSubmit(onSubmit)}> */}
         <DigiFormInput
           afLabel='Sök efter arbetsgivare med namn eller organisationsnummer'
           afLabelDescription='T.ex. Arbetsförmedlingen'
@@ -44,6 +43,7 @@ export const Inputfield = ({
           afVariation={FormInputVariation.MEDIUM}
           afType={FormInputType.TEXT}
           onAfOnInput={handleChange}
+          className={inputfieldStyles.searchfield}
         >
           <DigiButton slot='button' onAfOnClick={onSubmit}>
             Sök
