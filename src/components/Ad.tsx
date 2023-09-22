@@ -1,11 +1,14 @@
+import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import { JobAdsContext } from '../context/JobAdsContext';
 import { useAd } from '../hooks/useAd';
 import NotFound from './NotFound';
 
 const Ad = () => {
 	const { id } = useParams();
+	const { adsResponse } = useContext(JobAdsContext);
 
-	const ad = useAd(id);
+	const ad = useAd(id, adsResponse);
 
 	if (!ad) {
 		return <NotFound></NotFound>;
@@ -17,7 +20,7 @@ const Ad = () => {
 			<article>
 				<h3>{ad.employer.name}</h3>
 				<span>{ad.occupation.label}</span>
-				<span>{ad.publication_date}</span>
+				<span>{new Date(ad.publication_date).toLocaleDateString('sv-SE')}</span>
 			</article>
 			<article>
 				<ul>
@@ -59,7 +62,10 @@ const Ad = () => {
 					<li>
 						<h4>Om annonsen:</h4>
 						<span>Annons-id: {ad.id}</span>
-						<span>Publicerad: {ad.publication_date}</span>
+						<span>
+							Publicerad:{' '}
+							{new Date(ad.publication_date).toLocaleDateString('sv-SE')}
+						</span>
 					</li>
 				</ul>
 			</article>

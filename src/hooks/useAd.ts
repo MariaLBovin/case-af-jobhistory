@@ -1,10 +1,8 @@
-import { useContext } from 'react';
-import { JobAdsContext } from '../context/JobAdsContext';
 import { IAd } from '../models/IAd';
+import { IGetJobAdsResponse } from '../models/IGetJobAdsResponse';
 
-export function useAd(id: string | undefined) {
-	const { adsResponse } = useContext(JobAdsContext);
-	const ad: IAd | undefined = adsResponse.hits.find((ad) => ad.id === id);
+export function useAd(id: string | undefined, context: IGetJobAdsResponse) {
+	const ad: IAd | undefined = context.hits.find((ad) => ad.id === id);
 
 	if (ad) {
 		console.log('hittade sidan');
