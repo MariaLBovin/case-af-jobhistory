@@ -36,8 +36,9 @@ const Layout = () => {
             location.pathname == "/" && layoutStyles.home_green
           }`}
         >
+          {location.pathname == "/" && <Outlet />}
           {showSearch && <Search />}
-          <Outlet />
+          {location.pathname != "/" && <Outlet />}
         </main>
       </JobAdsContext.Provider>
       <Footer />

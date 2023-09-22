@@ -1,8 +1,7 @@
-import listStyle from "../styles/displaySearchReslut.module.css";
 import {
-  FormSelectVariation,
-  FormSelectValidation,
-} from "@digi/arbetsformedlingen";
+	FormSelectValidation,
+	FormSelectVariation,
+} from '@digi/arbetsformedlingen';
 import {
   DigiFormSelect,
   DigiNavigationPagination,
@@ -70,8 +69,6 @@ const SearchResults = () => {
       ></DigiNavigationPagination>
     </>
   );
-};
-
- export default SearchResults;
 
 
+export default SearchResults;

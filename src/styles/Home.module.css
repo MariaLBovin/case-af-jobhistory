@@ -1,0 +1,16 @@
+@import "./index.css";
+
+.home_container {
+  background-color: var(--bg-color-secondary);
+  color: var(--text-color-secondary);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.msg {
+  padding: 35px 0 35px 0;
+  width: 95%;
+  max-width: 768px;
+}

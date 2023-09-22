@@ -27,6 +27,9 @@ interface IOccupation {
 	label: string;
 }
 
+interface IWorkHoursType {
+	label: string;
+}
 
 export interface IAd {
 	id: string;
@@ -36,8 +39,11 @@ export interface IAd {
 	publication_date: string;
 	description: IDescription;
 	employment_type: IEmploymentType;
+	working_hours_type: IWorkHoursType;
+	duration: IWorkHoursType;
 	salary_description: string;
 	employer: IEmployer;
+	experience_required: string;
 	occupation: IOccupation;
 	occupation_group: IOccupation;
 	occupation_field: IOccupation;
