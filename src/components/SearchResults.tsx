@@ -55,7 +55,7 @@ const SearchResults = () => {
         onAfOnChange={handleResults}
       >
         <option value='10'>10</option>
-        <option value='20'>25</option>
+        <option value='25'>25</option>
         <option value='50'>50</option>
       </DigiFormSelect>
       <ResultList filteredAds={filteredAds}></ResultList>
@@ -63,7 +63,7 @@ const SearchResults = () => {
         afTotalPages={totaltPages}
         afInitActive-page={1}
         afCurrentResultStart={1}
-        afCurrentResultEnd={totaltNumberOfAds}
+        afCurrentResultEnd={results}
         afTotalResults={totaltNumberOfAds}
         afResultName='annonser'
         onAfOnPageChange={handlePageChange}
