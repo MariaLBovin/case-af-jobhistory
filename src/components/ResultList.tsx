@@ -3,15 +3,22 @@ import { Link } from 'react-router-dom'
 import listStyle from '../styles/displaySearchReslut.module.css'
 
 interface IResultlistProps {
-    ads: IAd[],
+    hits: IAd[],
     resultsPerPage: number
 }
 
-export const ResultList = ({ads, resultsPerPage}: IResultlistProps) => {
+export const ResultList = ({hits, resultsPerPage}: IResultlistProps) => {
     const startIndex = 0;
     const endIndex = startIndex + resultsPerPage
 
-    const filteredAds = ads.slice(startIndex, endIndex)
+    const filteredAds = hits.slice(startIndex, endIndex)
+
+    const formatedDate = (dateString : string) :string => {
+      const date = new Date (dateString);
+      return date.toLocaleDateString(undefined)
+
+    }
+    
   return (
     <>
    <ul>
@@ -22,7 +29,7 @@ export const ResultList = ({ads, resultsPerPage}: IResultlistProps) => {
       <Link to={'lägg till adress'}>
       <h3>{ad.employer.name}</h3>
       <p>{ad.occupation.label}</p>
-      <p>Publiceringsdatum {ad.publication_date}</p>
+      <p>Publiceringsdatum {formatedDate(ad.publication_date)}</p>
       </Link>
     </li>
    ))}
