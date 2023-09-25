@@ -1,6 +1,5 @@
-import { teamMembers } from "../arrays/teammembers"
-import { Members } from "./Members"
-
+import { teamMembers } from "@/arrays/teammembers";
+import { Members } from "@/components/Members";
 
 export const Team = () => {
   return (
@@ -11,5 +10,5 @@ export const Team = () => {
         ))}
       </ul>
     </>
-  )
-}
+  );
+};

@@ -1,10 +1,9 @@
-import { IAd } from '@/models/IAd';
-import { Link, useParams } from 'react-router-dom';
-import listStyle from '../styles/displaySearchReslut.module.css';
+import { IAd } from "@/models/IAd";
+import { Link, useParams } from "react-router-dom";
+import listStyle from "@/styles/displaySearchReslut.module.css";
 
 interface IResultlistProps {
-    filteredAds: IAd[],
-    
+  filteredAds: IAd[];
 }
 
 export const ResultList = ({filteredAds}: IResultlistProps) => {

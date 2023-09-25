@@ -1,7 +1,7 @@
 import {
-	FormSelectValidation,
-	FormSelectVariation,
-} from '@digi/arbetsformedlingen';
+  FormSelectValidation,
+  FormSelectVariation,
+} from "@digi/arbetsformedlingen";
 import {
   DigiFormSelect,
   DigiNavigationPagination,
@@ -49,7 +49,7 @@ const SearchResults = () => {
   const startIndex = (currentPage -1) * resultState;
   const endIndex = startIndex + resultState
 
-  const filteredAds = hits.slice(startIndex, endIndex)
+  const filteredAds = hits.slice(startIndex, endIndex);
 
  const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
   const newPage = e.detail

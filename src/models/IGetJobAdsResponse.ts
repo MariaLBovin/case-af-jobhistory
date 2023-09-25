@@ -1,5 +1,5 @@
-import { IAd } from './IAd';
+import { IAd } from "./IAd";
 
 export interface IGetJobAdsResponse {
-	hits: IAd[];
+  hits: IAd[];
 }
