@@ -5,6 +5,7 @@ import { JobAdsContext } from "@/context/JobAdsContext";
 import { useNavigate } from "react-router-dom";
 import { DatePicker, ISearchDates } from "@/components/DatePicker";
 import { IGetJobAds } from "@/models/IGetJobAds";
+import searchStyles from "../styles/Search.module.css";
 
 const Search = () => {
   const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });
@@ -14,7 +15,7 @@ const Search = () => {
   const handleSubmit = async () => {
     const response = await getJobAds(searchBody);
     setAdsResponse(response);
-    // setSearchBody({ ...searchBody, employer: "" });
+    localStorage.setItem("search", JSON.stringify(response));
     navigate("/search-results");
   };
 
@@ -29,14 +30,16 @@ const Search = () => {
   };
 
   return (
-    <div>
-      <Inputfield
-        handleSubmit={handleSubmit}
-        handleSearchText={handleSearchText}
-        currentValue={searchBody.employer}
-      />
-      <DatePicker handleSelectedDates={handleSelectedDates} />
-    </div>
+    <section className={searchStyles.search_container}>
+      <div className={searchStyles.search_form}>
+        <Inputfield
+          handleSubmit={handleSubmit}
+          handleSearchText={handleSearchText}
+          currentValue={searchBody.employer}
+        />
+        <DatePicker handleSelectedDates={handleSelectedDates} />
+      </div>
+    </section>
   );
 };
 

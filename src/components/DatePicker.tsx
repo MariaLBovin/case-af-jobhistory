@@ -30,7 +30,7 @@ export const DatePicker = ({ handleSelectedDates }: IDateSelectorProps) => {
 
   return (
     <div className={datePickerStyles.datePickerWrapper}>
-      <div>
+      <div className={datePickerStyles.datePicker}>
         <label
           className={datePickerStyles.visuallyHidden}
           htmlFor='selected-date-from'
@@ -44,7 +44,7 @@ export const DatePicker = ({ handleSelectedDates }: IDateSelectorProps) => {
           selectedDate={selectedFrom}
         />
       </div>
-      <div>
+      <div className={datePickerStyles.datePicker}>
         <label
           className={datePickerStyles.visuallyHidden}
           htmlFor='selected-date-to'
