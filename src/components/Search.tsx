@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
-import { getJobAds } from "../services/JobAdSearchServices";
-import { Inputfield } from "./Inputfield";
-import { JobAdsContext } from "../context/JobAdsContext";
+import { getJobAds } from "@/services/JobAdSearchServices";
+import { Inputfield } from "@/components/Inputfield";
+import { JobAdsContext } from "@/context/JobAdsContext";
 import { useNavigate } from "react-router-dom";
-import { DatePicker, ISearchDates } from "./DatePicker";
+import { DatePicker, ISearchDates } from "@/components/DatePicker";
 import { IGetJobAds } from "@/models/IGetJobAds";
 
 const Search = () => {

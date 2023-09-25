@@ -1,12 +1,12 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { paths } from "../config/paths";
-import Header from "./Header";
-import Search from "./Search";
-import Footer from "./Footer";
+import Header from "@/components/Header";
+import Search from "@/components/Search";
+import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
-import layoutStyles from "../styles/Layout.module.css";
-import { JobAdsContext } from "../context/JobAdsContext";
-import { IGetJobAdsResponse } from "../models/IGetJobAdsResponse";
+import layoutStyles from "@/styles/Layout.module.css";
+import { JobAdsContext } from "@/context/JobAdsContext";
+import { IGetJobAdsResponse } from "@/models/IGetJobAdsResponse";
 
 const Layout = () => {
   const [showSearch, setShowSearch] = useState<boolean>(false);

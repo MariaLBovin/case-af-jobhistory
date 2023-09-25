@@ -1,4 +1,4 @@
-import { IPaths } from "../types/IPaths";
+import { IPaths } from "@/types/IPaths";
 
 export const paths: IPaths = {
   home: "/",
