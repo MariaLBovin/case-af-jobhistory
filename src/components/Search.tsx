@@ -10,12 +10,20 @@ const Search = () => {
   const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });
   const { setAdsResponse } = useContext(JobAdsContext);
   const navigate = useNavigate();
+  
 
   const handleSubmit = async () => {
     const response = await getJobAds(searchBody);
+
+    const pageValue = searchBody.page || 1;
+    const resultValue = searchBody.result || 10;
     setAdsResponse(response);
-    // setSearchBody({ ...searchBody, employer: "" });
-    navigate("/search-results");
+
+   
+  
+    navigate(`/search-results/${pageValue}/${resultValue}`)
+    // // setSearchBody({ ...searchBody, employer: "" });
+    // navigate("/search-results");
   };
 
   const handleSearchText = (data: string) => {

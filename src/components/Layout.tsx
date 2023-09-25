@@ -16,6 +16,7 @@ const Layout = () => {
   });
   const location = useLocation();
 
+
   useEffect(() => {
     if (
       location.pathname == paths.home ||
@@ -25,6 +26,7 @@ const Layout = () => {
     } else {
       setShowSearch(false);
     }
+
   }, [location.pathname]);
 
   return (
