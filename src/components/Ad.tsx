@@ -4,6 +4,8 @@ import { JobAdsContext } from '../context/JobAdsContext';
 import { useAd } from '../hooks/useAd';
 import NotFound from './NotFound';
 
+import { GoBackButton } from './GoBackButton';
+
 const Ad = () => {
 	const { id } = useParams();
 	const { adsResponse } = useContext(JobAdsContext);
@@ -16,6 +18,7 @@ const Ad = () => {
 
 	return (
 		<section>
+			<GoBackButton></GoBackButton>
 			<h2>{ad.headline}</h2>
 			<article>
 				<h3>{ad.employer.name}</h3>
