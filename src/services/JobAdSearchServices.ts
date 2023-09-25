@@ -1,6 +1,6 @@
 import { IGetJobAdsResponse } from "@/models/IGetJobAdsResponse";
 import { IGetJobAds } from "@/models/IGetJobAds";
-import { get } from "./ServiceBase";
+import { get } from "@/services/ServiceBase";
 
 // Base values that pre-filters search results
 const REQUEST_SPECCS = import.meta.env.VITE_REQUEST_SPECCS;

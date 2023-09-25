@@ -1,10 +1,11 @@
-import { Team } from "./Team";
-
+import { Team } from "@/components/Team";
 
 const Contact = () => {
-  return <>
-  <Team></Team>
-  </>;
+  return (
+    <>
+      <Team></Team>
+    </>
+  );
 };
 
 export default Contact;

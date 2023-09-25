@@ -1,21 +1,20 @@
-import { useContext } from 'react';
-import { useParams } from 'react-router-dom';
-import { JobAdsContext } from '../context/JobAdsContext';
-import { useAd } from '../hooks/useAd';
-import adStyles from '../styles/ad.module.css';
-import NotFound from './NotFound';
+import { useContext } from "react";
+import { useParams } from "react-router-dom";
+import { JobAdsContext } from "@/context/JobAdsContext";
+import { useAd } from "@/hooks/useAd";
+import NotFound from "@/components/NotFound";
 
 const Ad = () => {
-	const { id } = useParams();
-	const { adsResponse } = useContext(JobAdsContext);
+  const { id } = useParams();
+  const { adsResponse } = useContext(JobAdsContext);
 
-	const ad = useAd(id, adsResponse);
+  const ad = useAd(id, adsResponse);
 
-	if (!ad) {
-		return <NotFound></NotFound>;
-	}
+  if (!ad) {
+    return <NotFound></NotFound>;
+  }
 
-	return (
+return (
 		<section className={adStyles.sectionWrapper}>
 			<h2>{ad.headline}</h2>
 
