@@ -20,13 +20,14 @@ const Layout = () => {
   useEffect(() => {
     if (
       location.pathname == paths.home ||
-      location.pathname == paths.searchResults
+      location.pathname.includes('/search-results') 
     ) {
       setShowSearch(true);
     } else {
       setShowSearch(false);
     }
-
+    
+    
   }, [location.pathname]);
 
   return (
