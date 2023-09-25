@@ -14,7 +14,7 @@ const Search = () => {
   const handleSubmit = async () => {
     const response = await getJobAds(searchBody);
     setAdsResponse(response);
-    // setSearchBody({ ...searchBody, employer: "" });
+    localStorage.setItem("search", JSON.stringify(response));
     navigate("/search-results");
   };
 

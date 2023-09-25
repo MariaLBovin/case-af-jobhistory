@@ -10,7 +10,6 @@ import { IGetJobAdsResponse } from "../models/IGetJobAdsResponse";
 
 const Layout = () => {
   const [showSearch, setShowSearch] = useState<boolean>(false);
-  // const [adsData, setAdsData] = useState<IGetJobAdsResponse>({ hits: [] });
   const [adsResponse, setAdsResponse] = useState<IGetJobAdsResponse>({
     hits: [],
   });
@@ -26,6 +25,13 @@ const Layout = () => {
       setShowSearch(false);
     }
   }, [location.pathname]);
+
+  const data = localStorage.getItem("search");
+  useEffect(() => {
+    if (data) {
+      setAdsResponse(JSON.parse(data));
+    }
+  }, [data]);
 
   return (
     <>
