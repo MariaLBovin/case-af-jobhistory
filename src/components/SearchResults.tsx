@@ -6,9 +6,7 @@ import {
   DigiFormSelect,
   DigiNavigationPagination,
 } from "@digi/arbetsformedlingen-react";
-import { 
-  useContext, 
-  useState } from "react";
+import { useContext } from "react";
 import { 
   DigiFormSelectCustomEvent, 
   DigiNavigationPaginationCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
