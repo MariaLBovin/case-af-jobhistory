@@ -19,6 +19,12 @@ body {
   color: var(--text-color-primary);
 }
 
+main {
+  position: relative;
+  width: 90dvw;
+  margin: 0 auto;
+}
+
 ul,
 ol {
   margin: 0;

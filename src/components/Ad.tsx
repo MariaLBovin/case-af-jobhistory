@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import { JobAdsContext } from '../context/JobAdsContext';
 import { useAd } from '../hooks/useAd';
+import adStyles from '../styles/ad.module.css';
 import NotFound from './NotFound';
 
 const Ad = () => {
@@ -15,57 +16,90 @@ const Ad = () => {
 	}
 
 	return (
-		<section>
+		<section className={adStyles.sectionWrapper}>
 			<h2>{ad.headline}</h2>
-			<article>
+
+			<article className={`${adStyles.articleWrapper} ${adStyles.articleInfo}`}>
 				<h3>{ad.employer.name}</h3>
 				<span>{ad.occupation.label}</span>
-				<span>{new Date(ad.publication_date).toLocaleDateString('sv-SE')}</span>
+				<span>
+					Publicerad:
+					{new Date(ad.publication_date).toLocaleDateString('sv-SE')}
+				</span>
 			</article>
-			<article>
+
+			<article
+				className={`${adStyles.articleUlWrapper} ${adStyles.articleShort}`}
+			>
 				<ul>
 					<li>
 						<span>Omfattning: </span>
-						{ad.working_hours_type.label}
+						<p>{ad.working_hours_type.label}</p>
 					</li>
 					<li>
 						<span>Varaktighet: </span>
-						{ad.duration.label}
+						<p>{ad.duration.label}</p>
 					</li>
-					<li>Anställningform: {ad.employment_type.label}</li>
+					<li>
+						<span>Anställningform: </span>
+						<p>{ad.employment_type.label}</p>
+					</li>
 				</ul>
 			</article>
-			<article>
+
+			<article className={adStyles.articleExperience}>
 				<h2>Arbetslivserfarenhet</h2>
 				{ad.experience_required ? (
 					<p>{ad.experience_required}</p>
 				) : (
-					<p>'Ej specificerad'</p>
+					<p>Ej specificerad</p>
 				)}
 			</article>
-			<article>
+
+			<article className={adStyles.articleAbout}>
 				<h2>Om Jobbet</h2>
 				<p>{ad.description.text}</p>
 			</article>
-			<article>
+
+			<article className={adStyles.articleUlWrapper}>
 				<h2>Om anställningen</h2>
 				<ul>
 					<li>
-						<h4>Lön: </h4>
-						{ad.salary_description}
+						<div>
+							<span>Lön: </span>
+							<div>
+								{ad.salary_description
+									? ad.salary_description
+									: 'Ej specificerad'}
+							</div>
+						</div>
 					</li>
 					<li>
-						<h4>Arbetsgivaren:</h4>
-						<span>{ad.employer.name}</span>
-						<span>{ad.employer.organization_number}</span>
+						<div>
+							<span>Arbetsgivaren: </span>
+							<div>
+								<div>{ad.employer.name}</div>
+
+								<div>
+									{ad.employer.organization_number
+										? ad.employer.organization_number
+										: 'Org nr: ej angivet'}
+								</div>
+							</div>
+						</div>
 					</li>
+
 					<li>
-						<h4>Om annonsen:</h4>
-						<span>Annons-id: {ad.id}</span>
-						<span>
-							Publicerad:{' '}
-							{new Date(ad.publication_date).toLocaleDateString('sv-SE')}
-						</span>
+						<div>
+							<span>Annonsen:</span>
+
+							<div>
+								<span>Annons-id:</span>
+								{ad.id}
+								<span>Publicerad:</span>
+								{new Date(ad.publication_date).toLocaleDateString('sv-SE')}
+							</div>
+						</div>
 					</li>
 				</ul>
 			</article>
