@@ -50,7 +50,6 @@ const SearchResults = () => {
         afLabel='Visa antal träffar'
         afVariation={FormSelectVariation.SMALL}
         afValidation={FormSelectValidation.NEUTRAL}
-        className={listStyle.test}
         onAfOnChange={handleResults}
       >
         <option value='10'>10</option>
@@ -70,5 +69,6 @@ const SearchResults = () => {
     </>
   );
 
+}
 
 export default SearchResults;
