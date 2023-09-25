@@ -17,7 +17,7 @@ import {
   IJobAdsContext, 
   JobAdsContext } from "../context/JobAdsContext";
 import { 
-  useNavigate,} from 'react-router-dom';
+  useNavigate, useParams,} from 'react-router-dom';
 
 
 const SearchResults = () => {
@@ -26,9 +26,15 @@ const SearchResults = () => {
   const navigate = useNavigate();
 
   const hits = adsResponse.hits
+  
+  const {page, result} =useParams()
 
-  const [resultState, setResultState] = useState<number>(10);
-  const [currentPageState, setCurrentPageState] = useState<number>(1);
+  const currentPage = page ? parseInt(page) : 1;
+  const resultState = result ? parseInt(result) : 10;
+  console.log(currentPage);
+  
+  // const [resultState, setResultState] = useState<number>(10);
+  // const [currentPageState, setCurrentPageState] = useState<number>(1);
 
   const maximumOfAds = 100;
 
@@ -39,20 +45,17 @@ const SearchResults = () => {
 
   const handleResults = (e: DigiFormSelectCustomEvent<HTMLSelectElement>) => {
     const newResults = parseInt(e.target.value)
-    setResultState(newResults);
-    setCurrentPageState(1)
-    navigate(`/search-results?page=1&result=${newResults}`)
+    navigate(`/search-results/1/${newResults}`)
   };
 
-  const startIndex = (currentPageState -1) * resultState;
+  const startIndex = (currentPage -1) * resultState;
   const endIndex = startIndex + resultState
 
   const filteredAds = hits.slice(startIndex, endIndex)
 
  const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
   const newPage = e.detail
-  setCurrentPageState(newPage)
-  navigate(`/search-results?page=${newPage}&result=${resultState}`)
+  navigate(`/search-results/${newPage}/${resultState}`)
   
  }
 
@@ -63,6 +66,7 @@ const SearchResults = () => {
         afVariation={FormSelectVariation.SMALL}
         afValidation={FormSelectValidation.NEUTRAL}
         onAfOnChange={handleResults}
+        afValue={resultState === 50 ? '50' : resultState === 25 ? '25' : '10'}
       >
         <option value='10'>10</option>
         <option value='25'>25</option>
@@ -71,8 +75,8 @@ const SearchResults = () => {
       <ResultList filteredAds={filteredAds}></ResultList>
       <DigiNavigationPagination
         afTotalPages={totaltPages}
-        afInitActive-page={1}
-        afCurrentResultStart={1}
+        afInitActive-page={currentPage}
+        afCurrentResultStart={currentPage}
         afCurrentResultEnd={resultState}
         afTotalResults={totaltNumberOfAds}
         afResultName='annonser'
