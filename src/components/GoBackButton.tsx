@@ -19,11 +19,8 @@ export const GoBackButton = () => {
         onAfOnClick={handleNavigate}
         
         >
-            Tillbaka
-    <DigiIcon slot='icon' afName="chevron-left">
-           
-        </DigiIcon> 
-  
+        Tillbaka
+    <DigiIcon slot='icon' afName="chevron-left"></DigiIcon> 
     </DigiButton>
     </div>
     </>
