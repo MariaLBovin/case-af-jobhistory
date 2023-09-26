@@ -1,8 +1,8 @@
 import { GoBackButton } from "./GoBackButton";
 import { Team } from "./Team";
 import { AboutProject } from "./AboutProject";
-import contactStyles from '../styles/contact.module.css'
-import { GoBackButton } from "./GoBackButton";
+import contactStyles from '../styles/Contact.module.css'
+
 
 
 const Contact = () => {

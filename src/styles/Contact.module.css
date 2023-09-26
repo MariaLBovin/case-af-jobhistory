@@ -1,0 +1,36 @@
+.ul {
+    margin-block: 1rem;
+}
+.li {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    max-width: 400px;
+    height: auto;
+}
+.article {
+    flex-direction: column;
+    margin-left: 20px
+}
+.img {
+    height: 100px;
+}
+.div {
+    flex-direction: row;
+
+}
+.div img {
+    margin-right: 10px;
+}
+
+@media (width >=1024px){
+    .divWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .li {
+        margin-right: auto;
+    }
+}

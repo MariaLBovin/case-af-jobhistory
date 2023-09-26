@@ -1,6 +1,6 @@
 import { teamMembers } from "@/arrays/teammembers";
 import { Members } from "@/components/Members";
-import contactStyles from '../styles/contact.module.css'
+import contactStyles from '../styles/Contact.module.css'
 
 export const Team = () => {
   return (
