@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import error404 from "../../public/404 Error Page not Found with people connecting a plug-amico.svg";
 
-import notFoundStyles from "@/styles/notFound.module.css";
+import notFoundStyles from "@/styles/NotFound.module.css";
 
 const NotFound = () => {
   return (
