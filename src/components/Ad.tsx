@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { JobAdsContext } from "@/context/JobAdsContext";
 import { useAd } from "@/hooks/useAd";
 import NotFound from "@/components/NotFound";
-import adStyles from "@/styles/ad.module.css";
+import adStyles from "@/styles/Ad.module.css";
 
 import { GoBackButton } from './GoBackButton';
 
