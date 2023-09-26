@@ -6,26 +6,29 @@ import { get } from "@/services/ServiceBase";
 const REQUEST_SPECCS = import.meta.env.VITE_REQUEST_SPECCS;
 
 export const getJobAds = async (params: IGetJobAds) => {
+  const offset: number = params.offset ? params.offset : 0;
+  const limit: number = params.limit ? params.limit : 100;
+
   if ((params.historicalFrom && params.historicalTo) === undefined) {
     return await get<IGetJobAdsResponse>(
-      `search?employer=${params.employer}${REQUEST_SPECCS}`
+      `search?employer=${params.employer}&offset=${offset}&limit=${limit}${REQUEST_SPECCS}`
     );
   }
 
   if (params.historicalTo === undefined) {
     return await get<IGetJobAdsResponse>(
-      `search?employer=${params.employer}&historical-from=${params.historicalFrom}${REQUEST_SPECCS}`
+      `search?employer=${params.employer}&historical-from=${params.historicalFrom}&offset=${offset}&limit=${limit}${REQUEST_SPECCS}`
     );
   }
 
   if (params.historicalFrom === undefined) {
     return await get<IGetJobAdsResponse>(
-      `search?employer=${params.employer}&historical-to=${params.historicalTo}${REQUEST_SPECCS}`
+      `search?employer=${params.employer}&historical-to=${params.historicalTo}&offset=${offset}&limit=${limit}${REQUEST_SPECCS}`
     );
   }
 
   return await get<IGetJobAdsResponse>(
-    `search?employer=${params.employer}&historical-from=${params.historicalFrom}&historical-to=${params.historicalTo}${REQUEST_SPECCS}`
+    `search?employer=${params.employer}&historical-from=${params.historicalFrom}&historical-to=${params.historicalTo}&offset=${offset}&limit=${limit}${REQUEST_SPECCS}`
   );
 };
 

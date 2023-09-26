@@ -1,30 +1,26 @@
 import { useContext, useState } from "react";
-import { getJobAds } from "@/services/JobAdSearchServices";
 import { Inputfield } from "@/components/Inputfield";
 import { JobAdsContext } from "@/context/JobAdsContext";
 import { useNavigate } from "react-router-dom";
 import { DatePicker, ISearchDates } from "@/components/DatePicker";
 import { IGetJobAds } from "@/models/IGetJobAds";
 import searchStyles from "../styles/Search.module.css";
+import adsCollector from "@/services/adsCollector";
 
 const Search = () => {
   const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });
   const { setAdsResponse } = useContext(JobAdsContext);
   const navigate = useNavigate();
-  
 
   const handleSubmit = async () => {
-    const response = await getJobAds(searchBody);
+    const response = await adsCollector(searchBody);
 
     const pageValue = searchBody.page || 1;
     const resultValue = searchBody.result || 10;
     setAdsResponse(response);
 
-   
-  
-    navigate(`/search-results/${pageValue}/${resultValue}`)
-    localStorage.setItem("search", JSON.stringify(response));
-    // navigate("/search-results");
+    navigate(`/search-results/${pageValue}/${resultValue}`);
+    // localStorage.setItem("search", JSON.stringify(searchBody));
   };
 
   const handleSearchText = (data: string) => {
