@@ -18,8 +18,10 @@ const Ad = () => {
   }
 
   return (
+    <>
+    <GoBackButton></GoBackButton>
     <section className={adStyles.sectionWrapper}>
-			<GoBackButton></GoBackButton>
+			
       <h2>{ad.headline}</h2>
 
       <article className={`${adStyles.articleWrapper} ${adStyles.articleInfo}`}>
@@ -107,6 +109,7 @@ const Ad = () => {
         </ul>
       </article>
     </section>
+    </>
   );
 };
 export default Ad;
