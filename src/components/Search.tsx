@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
-import { Inputfield } from "@/components/Inputfield";
+import Inputfield from "@/components/Inputfield";
 import { JobAdsContext } from "@/context/JobAdsContext";
 import { useNavigate } from "react-router-dom";
-import { DatePicker, ISearchDates } from "@/components/DatePicker";
+import { DatePicker } from "@/components/DatePicker";
 import { IGetJobAds } from "@/models/IGetJobAds";
 import searchStyles from "../styles/Search.module.css";
 import adsCollector from "@/services/adsCollector";
+import { ISearchDates } from "@/models/ISearchDates";
 
 const Search = () => {
   const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });

@@ -14,10 +14,11 @@ import {
 import { ResultList } from "./ResultList";
 import { IJobAdsContext, JobAdsContext } from "../context/JobAdsContext";
 import { useNavigate, useParams } from "react-router-dom";
+import searchResultsStyles from "@/styles/SearchResults.module.css";
 
 const SearchResults = () => {
   const { adsResponse } = useContext<IJobAdsContext>(JobAdsContext);
-  // const {page, result} = useParams();
+
   const navigate = useNavigate();
 
   const hits = adsResponse.hits;
@@ -27,9 +28,6 @@ const SearchResults = () => {
   const currentPage = page ? parseInt(page) : 1;
   const resultState = result ? parseInt(result) : 10;
   console.log(currentPage);
-
-  // const [resultState, setResultState] = useState<number>(10);
-  // const [currentPageState, setCurrentPageState] = useState<number>(1);
 
   const maximumOfAds = adsResponse.total.value;
 
@@ -54,29 +52,35 @@ const SearchResults = () => {
   };
 
   return (
-    <>
-      <DigiFormSelect
-        afLabel='Visa antal träffar'
-        afVariation={FormSelectVariation.SMALL}
-        afValidation={FormSelectValidation.NEUTRAL}
-        onAfOnChange={handleResults}
-        afValue={resultState === 50 ? "50" : resultState === 25 ? "25" : "10"}
-      >
-        <option value='10'>10</option>
-        <option value='25'>25</option>
-        <option value='50'>50</option>
-      </DigiFormSelect>
-      <ResultList filteredAds={filteredAds}></ResultList>
-      <DigiNavigationPagination
-        afTotalPages={totaltPages}
-        afInitActive-page={currentPage}
-        afCurrentResultStart={currentPage}
-        afCurrentResultEnd={resultState}
-        afTotalResults={totaltNumberOfAds}
-        afResultName='annonser'
-        onAfOnPageChange={handlePageChange}
-      ></DigiNavigationPagination>
-    </>
+    <section className={searchResultsStyles.results_container}>
+      <div className={searchResultsStyles.inner_container}>
+        <div className={searchResultsStyles.range_selector}>
+          <DigiFormSelect
+            afLabel='Visa antal träffar'
+            afVariation={FormSelectVariation.SMALL}
+            afValidation={FormSelectValidation.NEUTRAL}
+            onAfOnChange={handleResults}
+            afValue={
+              resultState === 50 ? "50" : resultState === 25 ? "25" : "10"
+            }
+          >
+            <option value='10'>10</option>
+            <option value='25'>25</option>
+            <option value='50'>50</option>
+          </DigiFormSelect>
+        </div>
+        <ResultList filteredAds={filteredAds}></ResultList>
+        <DigiNavigationPagination
+          afTotalPages={totaltPages}
+          afInitActive-page={currentPage}
+          afCurrentResultStart={currentPage}
+          afCurrentResultEnd={resultState}
+          afTotalResults={totaltNumberOfAds}
+          afResultName='annonser'
+          onAfOnPageChange={handlePageChange}
+        ></DigiNavigationPagination>
+      </div>
+    </section>
   );
 };
 

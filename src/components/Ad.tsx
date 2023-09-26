@@ -5,7 +5,7 @@ import { useAd } from "@/hooks/useAd";
 import NotFound from "@/components/NotFound";
 import adStyles from "@/styles/Ad.module.css";
 
-import { GoBackButton } from './GoBackButton';
+import GoBackButton from './GoBackButton';
 
 const Ad = () => {
   const { id } = useParams();
