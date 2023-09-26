@@ -6,11 +6,14 @@ interface IResultlistProps {
   filteredAds: IAd[];
 }
 
-export const ResultList = ({ filteredAds }: IResultlistProps) => {
-  const formatedDate = (dateString: string): string => {
-    const date = new Date(dateString);
-    return date.toLocaleDateString(undefined);
-  };
+export const ResultList = ({filteredAds}: IResultlistProps) => {
+
+
+  
+	const formatedDate = (dateString: string): string => {
+		const date = new Date(dateString);
+		return date.toLocaleDateString(undefined);
+	};
 
   return (
     <>
@@ -27,4 +30,5 @@ export const ResultList = ({ filteredAds }: IResultlistProps) => {
       </ul>
     </>
   );
+
 };
