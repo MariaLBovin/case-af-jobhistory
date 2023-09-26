@@ -7,13 +7,11 @@ import contactStyles from '../styles/Contact.module.css'
 
 const Contact = () => {
   return (
-    <>
-      <GoBackButton></GoBackButton>
+    <><GoBackButton></GoBackButton>
       <div className={contactStyles.divWrapper}>
       <AboutProject></AboutProject>
       <Team></Team>
-      </div>
-      
+        </div>
     </>
   );
 };
