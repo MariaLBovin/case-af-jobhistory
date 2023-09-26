@@ -7,6 +7,9 @@
   --bg-color-secondary: #113f09;
   --text-color-primary: #616161;
   --text-color-secondary: #ffffff;
+  --container-width-primary: 100%;
+  --container-width-secondary: 95%;
+  --container-max-width-secondary: 768px;
 }
 
 body {
