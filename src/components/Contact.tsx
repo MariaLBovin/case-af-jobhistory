@@ -1,5 +1,5 @@
-import { GoBackButton } from "./GoBackButton";
-import { Team } from "./Team";
+import GoBackButton  from "./GoBackButton";
+import Team from "./Team";
 
 
 const Contact = () => {

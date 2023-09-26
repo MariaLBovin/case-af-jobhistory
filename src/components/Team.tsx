@@ -1,7 +1,7 @@
 import { teamMembers } from "@/arrays/teammembers";
 import { Members } from "@/components/Members";
 
-export const Team = () => {
+const Team = () => {
   return (
     <>
       <ul>
@@ -12,3 +12,4 @@ export const Team = () => {
     </>
   );
 };
+export default Team;

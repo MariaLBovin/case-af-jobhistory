@@ -13,7 +13,7 @@ import { useState } from "react";
 import { DigiFormInputCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { ISearchProps } from "@/models/ISearchProps";
 
-export const Inputfield = ({
+const Inputfield = ({
   handleSubmit,
   handleSearchText,
   currentValue,
@@ -60,3 +60,5 @@ export const Inputfield = ({
     </>
   );
 };
+
+export default Inputfield

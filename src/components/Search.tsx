@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { getJobAds } from "@/services/JobAdSearchServices";
-import { Inputfield } from "@/components/Inputfield";
+import Inputfield  from "@/components/Inputfield";
 import { JobAdsContext } from "@/context/JobAdsContext";
 import { useNavigate } from "react-router-dom";
-import { DatePicker, ISearchDates } from "@/components/DatePicker";
+import { DatePicker} from "@/components/DatePicker";
 import { IGetJobAds } from "@/models/IGetJobAds";
 import searchStyles from "../styles/Search.module.css";
+import { ISearchDates } from "@/models/ISearchDates";
 
 const Search = () => {
   const [searchBody, setSearchBody] = useState<IGetJobAds>({ employer: "" });
@@ -20,11 +21,8 @@ const Search = () => {
     const resultValue = searchBody.result || 10;
     setAdsResponse(response);
 
-   
-  
     navigate(`/search-results/${pageValue}/${resultValue}`)
     localStorage.setItem("search", JSON.stringify(response));
-    // navigate("/search-results");
   };
 
   const handleSearchText = (data: string) => {

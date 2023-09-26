@@ -8,8 +8,6 @@ interface IResultlistProps {
 
 export const ResultList = ({filteredAds}: IResultlistProps) => {
 
-
-  
 	const formatedDate = (dateString: string): string => {
 		const date = new Date(dateString);
 		return date.toLocaleDateString(undefined);

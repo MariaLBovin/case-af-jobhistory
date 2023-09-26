@@ -20,7 +20,7 @@ import {
 
 const SearchResults = () => {
   const {adsResponse} =useContext<IJobAdsContext>(JobAdsContext)
-  // const {page, result} = useParams();
+
   const navigate = useNavigate();
 
   const hits = adsResponse.hits
@@ -30,9 +30,6 @@ const SearchResults = () => {
   const currentPage = page ? parseInt(page) : 1;
   const resultState = result ? parseInt(result) : 10;
   console.log(currentPage);
-  
-  // const [resultState, setResultState] = useState<number>(10);
-  // const [currentPageState, setCurrentPageState] = useState<number>(1);
 
   const maximumOfAds = 100;
 
