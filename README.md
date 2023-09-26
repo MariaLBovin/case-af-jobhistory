@@ -1,10 +1,10 @@
 # About Arbetsgivardata
 
 ## Background
-Arbetsförmedlingen has opened up its extensive databases of job advertisements and job postings that have been published over an extended period. This data source is of significant value and utility for various purposes, including gaining insights into the job market, analyzing trends, and developing applications that can assist job seekers and employers.
+Arbetsförmedlingen has opened up its extensive databases of job advertisements and job postings that have been published over an extended period. This data source is of significant value for various purposes, including gaining insights into the job market, analyzing trends, and developing applications that can assist job seekers and employers.
 
 ## Project Overview
-In this project, we utilize Arbetsförmedlingen's Historical Job Ads API to search for job postings published by a specific employer within a specified time frame. The aim is to create a useful application that can filter and present relevant job ads for both students and professionals. 
+In this project, we use Arbetsförmedlingen's Historical Job Ads API to search for job postings published by a specific employer within a specified time frame. The aim is to create a useful application that can filter and present relevant job ads for both students and professionals. 
 
 ## Project Specifications
 
