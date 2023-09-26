@@ -1,17 +1,14 @@
-import { useNavigate, useParams } from "react-router-dom";
-import buttonStyles from '../styles/goBackButton.module.css'
+import { useNavigate} from "react-router-dom";
+import buttonStyles from '../styles/GoBackButton.module.css'
 import { ButtonSize, ButtonVariation } from "@digi/arbetsformedlingen"
 import { DigiButton, DigiIcon, } from "@digi/arbetsformedlingen-react"
 
 export const GoBackButton = () => {
   const navigate = useNavigate();
 
-  const {page, result} = useParams()
 
   const handleNavigate = () => {
-    console.log('currentpage', page);
-    console.log('currentresult', result);
-    navigate(`/search-results/${page}/${result}`);
+    navigate(-1)
   };
 
   return (
