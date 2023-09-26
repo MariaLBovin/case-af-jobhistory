@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import { TeamMembers } from "@/models/TeammemberClass";
 import membersStyles from "@/styles/Members.module.css";
 
-interface ITeamMember {
+interface ITeamMemberProps {
   member: TeamMembers;
 }
 
-export const Members = ({ member }: ITeamMember) => {
+export const Members = ({ member }: ITeamMemberProps) => {
   const githubImg = "/github-mark.png";
   const linkedInImg = "/LI-In-Bug.png";
   const personalImg = member.img;
