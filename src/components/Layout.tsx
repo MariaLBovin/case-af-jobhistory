@@ -15,15 +15,18 @@ const Layout = () => {
   });
   const location = useLocation();
 
+
   useEffect(() => {
     if (
       location.pathname == paths.home ||
-      location.pathname == paths.searchResults
+      location.pathname.includes('/search-results') 
     ) {
       setShowSearch(true);
     } else {
       setShowSearch(false);
     }
+    
+    
   }, [location.pathname]);
 
   const data = localStorage.getItem("search");

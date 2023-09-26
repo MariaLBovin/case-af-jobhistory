@@ -6,43 +6,52 @@ import {
   DigiFormSelect,
   DigiNavigationPagination,
 } from "@digi/arbetsformedlingen-react";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import {
   DigiFormSelectCustomEvent,
   DigiNavigationPaginationCustomEvent,
 } from "@digi/arbetsformedlingen/dist/types/components";
-import { ResultList } from "@/components/ResultList";
-import { IJobAdsContext, JobAdsContext } from "@/context/JobAdsContext";
+import { ResultList } from "./ResultList";
+import { IJobAdsContext, JobAdsContext } from "../context/JobAdsContext";
+import { useNavigate, useParams } from "react-router-dom";
 import searchResultsStyles from "@/styles/SearchResults.module.css";
 
 const SearchResults = () => {
   const { adsResponse } = useContext<IJobAdsContext>(JobAdsContext);
+  // const {page, result} = useParams();
+  const navigate = useNavigate();
+
   const hits = adsResponse.hits;
 
-  const [results, setResults] = useState<number>(10);
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const { page, result } = useParams();
+
+  const currentPage = page ? parseInt(page) : 1;
+  const resultState = result ? parseInt(result) : 10;
+  console.log(currentPage);
+
+  // const [resultState, setResultState] = useState<number>(10);
+  // const [currentPageState, setCurrentPageState] = useState<number>(1);
 
   const maximumOfAds = 100;
 
   const totaltNumberOfAds = hits.length;
   const totaltPages = Math.ceil(
-    Math.min(totaltNumberOfAds, maximumOfAds) / results
+    Math.min(totaltNumberOfAds, maximumOfAds) / resultState
   );
 
   const handleResults = (e: DigiFormSelectCustomEvent<HTMLSelectElement>) => {
-    setResults(parseInt(e.target.value));
-    setCurrentPage(1);
+    const newResults = parseInt(e.target.value);
+    navigate(`/search-results/1/${newResults}`);
   };
 
-  const startIndex = (currentPage - 1) * results;
-  const endIndex = startIndex + results;
+  const startIndex = (currentPage - 1) * resultState;
+  const endIndex = startIndex + resultState;
 
   const filteredAds = hits.slice(startIndex, endIndex);
 
   const handlePageChange = (e: DigiNavigationPaginationCustomEvent<number>) => {
-    console.log(e.detail);
-    const page = e.detail;
-    setCurrentPage(page);
+    const newPage = e.detail;
+    navigate(`/search-results/${newPage}/${resultState}`);
   };
 
   return (
@@ -54,6 +63,9 @@ const SearchResults = () => {
             afVariation={FormSelectVariation.SMALL}
             afValidation={FormSelectValidation.NEUTRAL}
             onAfOnChange={handleResults}
+            afValue={
+              resultState === 50 ? "50" : resultState === 25 ? "25" : "10"
+            }
           >
             <option value='10'>10</option>
             <option value='25'>25</option>
@@ -63,9 +75,9 @@ const SearchResults = () => {
         <ResultList filteredAds={filteredAds}></ResultList>
         <DigiNavigationPagination
           afTotalPages={totaltPages}
-          afInitActive-page={1}
-          afCurrentResultStart={1}
-          afCurrentResultEnd={results}
+          afInitActive-page={currentPage}
+          afCurrentResultStart={currentPage}
+          afCurrentResultEnd={resultState}
           afTotalResults={totaltNumberOfAds}
           afResultName='annonser'
           onAfOnPageChange={handlePageChange}
@@ -74,4 +86,5 @@ const SearchResults = () => {
     </section>
   );
 };
+
 export default SearchResults;
