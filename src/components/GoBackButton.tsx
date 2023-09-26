@@ -3,8 +3,6 @@ import buttonStyles from '../styles/GoBackButton.module.css'
 import { ButtonSize, ButtonVariation } from "@digi/arbetsformedlingen"
 import { DigiButton, DigiIcon, } from "@digi/arbetsformedlingen-react"
 
-
-
 export const GoBackButton = () => {
   const navigate = useNavigate();
   
