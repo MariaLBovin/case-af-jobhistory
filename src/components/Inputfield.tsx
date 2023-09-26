@@ -44,11 +44,10 @@ const Inputfield = ({
           afType={FormInputType.TEXT}
           onAfOnInput={handleChange}
           className={inputFieldStyles.searchfield}
-        >
-          <DigiButton slot='button' onAfOnClick={onSubmit}>
-            Sök
-          </DigiButton>
-        </DigiFormInput>
+        ></DigiFormInput>
+        <DigiButton slot='button' onAfOnClick={onSubmit}>
+          Sök
+        </DigiButton>
         {buttonClicked && currentValue.length < 2 && (
           <DigiFormValidationMessage
             afVariation={FormValidationMessageVariation.ERROR}
