@@ -2,14 +2,15 @@
   width: 100%;
   max-width: 768px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-bottom: 35px;
 }
 
 .searchfield {
   width: 100%;
   max-width: 251px;
-  display: block;
 }
 
 @media screen and (min-width: 768px) {
