@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { TeamMembers } from "@/models/TeammemberClass";
-import contactStyles from "@/styles/contact.module.css";
+import membersStyles from "@/styles/Members.module.css";
 
 interface ITeamMember {
   member: TeamMembers;
@@ -13,17 +13,17 @@ export const Members = ({ member }: ITeamMember) => {
 
   return (
     <>
-      <li className={contactStyles.li}>
+      <li className={membersStyles.li}>
         <img
-          className={contactStyles.img}
+          className={membersStyles.img}
           src={personalImg}
           alt={member.name}
           height={70}
         />
-        <article className={contactStyles.article}>
+        <article className={membersStyles.article}>
           <h3>{member.name}</h3>
           <a href={`mailto:${member.email}`}>Maila mig</a>
-          <div className={contactStyles.div}>
+          <div className={membersStyles.div}>
             <Link to={member.gitlink}>
               <img src={githubImg} height={30} />
             </Link>
