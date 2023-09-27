@@ -15,11 +15,11 @@ import { ResultList } from "./ResultList";
 import { IJobAdsContext, JobAdsContext } from "../context/JobAdsContext";
 import { useNavigate, useParams } from "react-router-dom";
 import searchResultsStyles from "@/styles/SearchResults.module.css";
+import Statistics from "./Statistics";
 
 const SearchResults = () => {
 
   const { adsResponse } = useContext<IJobAdsContext>(JobAdsContext);
-
   const navigate = useNavigate();
 
   const hits = adsResponse.hits;
@@ -70,6 +70,7 @@ const SearchResults = () => {
             <option value='50'>50</option>
           </DigiFormSelect>
         </div>
+        <Statistics></Statistics>
         <ResultList filteredAds={filteredAds}></ResultList>
         <DigiNavigationPagination
           afTotalPages={totaltPages}
