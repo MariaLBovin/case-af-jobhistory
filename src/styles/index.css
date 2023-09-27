@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+@import "@digi/arbetsformedlingen/dist/digi-arbetsformedlingen/digi-arbetsformedlingen.css";
+@import "./afColorReset.css";
+
+:root {
+  --bg-color-primary: #f5f2f2;
+  --bg-color-secondary: #113f09;
+  --text-color-primary: #616161;
+  --text-color-secondary: #ffffff;
+  --container-width-primary: 100%;
+  --container-width-secondary: 95%;
+  --container-max-width-secondary: 768px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--bg-color-primary);
+  color: var(--text-color-primary);
+}
+
+main {
+  position: relative;
+  width: 90dvw;
+  margin: 0 auto;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  border: 0;
+}

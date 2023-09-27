@@ -1,0 +1,29 @@
+@import "./index.css";
+
+.results_container {
+  width: var(--container-width-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner_container {
+  width: var(--container-width-secondary);
+  max-width: var(--container-max-width-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  padding: 35px 0 35px 0;
+}
+
+.range_selector {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.range_selector_inner {
+  max-width: 150px;
+}

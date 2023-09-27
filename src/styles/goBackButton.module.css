@@ -1,0 +1,19 @@
+.button {
+    max-width: 430px;
+    margin: 0 auto;
+    margin-block: 1rem;
+}
+.contactButton {
+    max-width: 430px;
+    margin: 0 auto;
+    margin-block: 1rem;
+}
+@media (width >=1024px){
+    .button{
+        max-width: 72dvw;
+    }
+    .contactButton {
+        max-width: 72dvw;
+    }
+    
+}

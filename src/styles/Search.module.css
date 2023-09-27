@@ -1,0 +1,19 @@
+@import "./index.css";
+
+.search_container {
+  width: var(--container-width-primary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.search_form {
+  width: var(--container-width-secondary);
+  max-width: var(--container-max-width-secondary);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 0 35px 0;
+}
