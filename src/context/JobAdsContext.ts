@@ -7,6 +7,6 @@ export interface IJobAdsContext {
 }
 
 export const JobAdsContext = createContext<IJobAdsContext>({
-  adsResponse: { hits: [] },
+  adsResponse: { total: { value: 0 }, hits: [] },
   setAdsResponse: () => {},
 });
