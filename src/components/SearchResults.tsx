@@ -17,7 +17,6 @@ import { useNavigate, useParams } from "react-router-dom";
 import searchResultsStyles from "@/styles/SearchResults.module.css";
 
 const SearchResults = () => {
-
   const { adsResponse } = useContext<IJobAdsContext>(JobAdsContext);
 
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ const SearchResults = () => {
   const resultState = result ? parseInt(result) : 10;
   console.log(currentPage);
 
-  const maximumOfAds = 100;
+  const maximumOfAds = adsResponse.total.value;
 
   const totaltNumberOfAds = hits.length;
   const totaltPages = Math.ceil(
