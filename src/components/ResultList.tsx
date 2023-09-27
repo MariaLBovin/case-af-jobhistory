@@ -1,17 +1,22 @@
 import { IAd } from "@/models/IAd";
+// import listStyle from '@/styles/displaySearchReslut.module.css';
 import { Link } from "react-router-dom";
-import reslutListStyles from "@/styles/ReslutList.module.css";
+import { LoadingSpinner } from "./LoadingSpinner";
+import reslutListStyles from "@/styles/ResultList.module.css";
 
 interface IResultlistProps {
   filteredAds: IAd[];
 }
 
-export const ResultList = ({filteredAds}: IResultlistProps) => {
+export const ResultList = ({ filteredAds }: IResultlistProps) => {
+  const formatedDate = (dateString: string): string => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(undefined);
+  };
 
-	const formatedDate = (dateString: string): string => {
-		const date = new Date(dateString);
-		return date.toLocaleDateString(undefined);
-	};
+  if (filteredAds.length === 0) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <>
@@ -28,5 +33,4 @@ export const ResultList = ({filteredAds}: IResultlistProps) => {
       </ul>
     </>
   );
-
 };

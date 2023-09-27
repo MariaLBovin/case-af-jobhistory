@@ -11,30 +11,30 @@ import { IGetJobAdsResponse } from "@/models/IGetJobAdsResponse";
 const Layout = () => {
   const [showSearch, setShowSearch] = useState<boolean>(false);
   const [adsResponse, setAdsResponse] = useState<IGetJobAdsResponse>({
+    total: {
+      value: 0,
+    },
     hits: [],
   });
   const location = useLocation();
 
-
   useEffect(() => {
     if (
       location.pathname == paths.home ||
-      location.pathname.includes('/search-results') 
+      location.pathname.includes("/search-results")
     ) {
       setShowSearch(true);
     } else {
       setShowSearch(false);
     }
-    
-    
   }, [location.pathname]);
 
-  const data = localStorage.getItem("search");
-  useEffect(() => {
-    if (data) {
-      setAdsResponse(JSON.parse(data));
-    }
-  }, [data]);
+  // const data = localStorage.getItem("search");
+  // useEffect(() => {
+  //   if (data) {
+  //     setAdsResponse(JSON.parse(data));
+  //   }
+  // }, [data]);
 
   return (
     <>
