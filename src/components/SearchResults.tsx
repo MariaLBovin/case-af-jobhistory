@@ -31,20 +31,21 @@ const SearchResults = () => {
   const resultState = result ? parseInt(result) : 10;
   console.log(currentPage);
 
-  const maximumOfAds = adsResponse.total.value;
-
   const totaltNumberOfAds = hits.length;
-  const totaltPages = Math.ceil(
-    Math.min(totaltNumberOfAds, maximumOfAds) / resultState
-  );
+
+  const totaltPages = Math.ceil(totaltNumberOfAds / resultState);
+  console.log(totaltPages);
+  
 
   const handleResults = (e: DigiFormSelectCustomEvent<HTMLSelectElement>) => {
     const newResults = parseInt(e.target.value);
-    navigate(`/search-results/1/${newResults}`);
+    navigate(`/search-results/${currentPage}/${newResults}`);
   };
 
   const startIndex = (currentPage - 1) * resultState;
   const endIndex = startIndex + resultState;
+
+  const startNumber = startIndex + 1
 
   const filteredAds = hits.slice(startIndex, endIndex);
 
@@ -87,8 +88,8 @@ const SearchResults = () => {
         <DigiNavigationPagination
           afTotalPages={totaltPages}
           afInitActive-page={currentPage}
-          afCurrentResultStart={currentPage}
-          afCurrentResultEnd={resultState}
+          afCurrentResultStart={startNumber}
+          afCurrentResultEnd={endIndex}
           afTotalResults={totaltNumberOfAds}
           afResultName='annonser'
           onAfOnPageChange={handlePageChange}
