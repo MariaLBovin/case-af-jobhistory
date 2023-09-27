@@ -1,9 +1,9 @@
 import { ChartLineData, ChartLineSeries, } from "@/models/IChartdata";
 import { BarChartVariation, QuoteMultiContainerHeadingLevel } from "@digi/arbetsformedlingen";
 import { DigiBarChart } from "@digi/arbetsformedlingen-react"
-import statisticsStyle from '../styles/Statistics.module.css'
 import { useContext } from "react";
 import { IJobAdsContext, JobAdsContext } from "@/context/JobAdsContext";
+import statisticStyle from '../styles/Statistics.module.css'
 
 
 const Statistics = () => {
@@ -28,25 +28,26 @@ const Statistics = () => {
 
     const yValues = yearCount.map(years => years.count);
     const xValues = yearCount.map(years => parseInt(years.year, 10));
+    const sortedXValues =xValues.sort()
     const xValuesNames = yearCount.map(years => years.year);
+    const sortedXValuesNames = xValuesNames.sort();
 
     const chartLineSeries = new ChartLineSeries(yValues, 'Antal Annonser')
     const chartLineData = new ChartLineData({
-        xValues: xValues,
+        xValues: sortedXValues,
         series: [chartLineSeries],
-        xValueNames: xValuesNames,
+        xValueNames: sortedXValuesNames,
       },
       "År",
       "Antal annonser",
       "Antal annonser per år")
     
   return (
-        <div className={statisticsStyle.statisticsDiv}>
+        <div className={statisticStyle.statisticsDiv}>
         <DigiBarChart
         afChartData={chartLineData}
         afHeadingLevel={QuoteMultiContainerHeadingLevel.H2}
-        afVariation={BarChartVariation.Vertical}
-
+        afVariation={BarChartVariation.Horizontal}
         ></DigiBarChart>
         </div>
   )

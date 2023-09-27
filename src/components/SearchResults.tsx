@@ -3,10 +3,11 @@ import {
   FormSelectVariation,
 } from "@digi/arbetsformedlingen";
 import {
+  DigiButton,
   DigiFormSelect,
   DigiNavigationPagination,
 } from "@digi/arbetsformedlingen-react";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {
   DigiFormSelectCustomEvent,
   DigiNavigationPaginationCustomEvent,
@@ -21,6 +22,7 @@ const SearchResults = () => {
 
   const { adsResponse } = useContext<IJobAdsContext>(JobAdsContext);
   const navigate = useNavigate();
+  const [showStatistics, setShowStatistics] = useState(false)
 
   const hits = adsResponse.hits;
 
@@ -52,25 +54,35 @@ const SearchResults = () => {
     navigate(`/search-results/${newPage}/${resultState}`);
   };
 
+  const toggleStatistics = () => {
+    setShowStatistics(!showStatistics);
+  }
+
   return (
     <section className={searchResultsStyles.results_container}>
       <div className={searchResultsStyles.inner_container}>
-      <Statistics></Statistics>
-        <div className={searchResultsStyles.range_selector}>
-          <DigiFormSelect
-            afLabel='Visa antal träffar'
-            afVariation={FormSelectVariation.SMALL}
-            afValidation={FormSelectValidation.NEUTRAL}
-            onAfOnChange={handleResults}
-            afValue={
-              resultState === 50 ? "50" : resultState === 25 ? "25" : "10"
-            }
-          >
-            <option value='10'>10</option>
-            <option value='25'>25</option>
-            <option value='50'>50</option>
-          </DigiFormSelect>
-        </div>
+      {showStatistics && <Statistics></Statistics>}
+            <div className={searchResultsStyles.range_selector}>
+            <div className={searchResultsStyles.button_div}>
+              <DigiButton 
+              onAfOnClick={toggleStatistics}>
+              Toggla diagram
+              </DigiButton>
+            </div>
+              <DigiFormSelect
+                afLabel='Visa antal träffar'
+                afVariation={FormSelectVariation.SMALL}
+                afValidation={FormSelectValidation.NEUTRAL}
+                onAfOnChange={handleResults}
+                afValue={
+                  resultState === 50 ? "50" : resultState === 25 ? "25" : "10"
+                }
+              >
+                <option value='10'>10</option>
+                <option value='25'>25</option>
+                <option value='50'>50</option>
+              </DigiFormSelect>
+            </div>
         
         <ResultList filteredAds={filteredAds}></ResultList>
         <DigiNavigationPagination

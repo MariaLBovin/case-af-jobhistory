@@ -1,5 +1,6 @@
 .statisticsDiv {
-    width: 400px;
+    max-width: var(--container-max-width-secondary);
     height: 400px;
-    display: flex;
+    padding: 35px 0 35px 0;
+    margin-bottom: 35px;
 }
