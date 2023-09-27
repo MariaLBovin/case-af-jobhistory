@@ -19,17 +19,13 @@ import searchResultsStyles from "@/styles/SearchResults.module.css";
 const SearchResults = () => {
 
   const { adsResponse } = useContext<IJobAdsContext>(JobAdsContext);
-
+  const { page, result } = useParams();
   const navigate = useNavigate();
 
   const hits = adsResponse.hits;
 
-  const { page, result } = useParams();
-
   const currentPage = page ? parseInt(page) : 1;
   const resultState = result ? parseInt(result) : 10;
-  console.log(currentPage);
-
   const maximumOfAds = 100;
 
   const totaltNumberOfAds = hits.length;

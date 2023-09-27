@@ -16,11 +16,9 @@ const Search = () => {
 
   const handleSubmit = async () => {
     const response = await getJobAds(searchBody);
-
     const pageValue = searchBody.page || 1;
     const resultValue = searchBody.result || 10;
     setAdsResponse(response);
-
     navigate(`/search-results/${pageValue}/${resultValue}`)
     localStorage.setItem("search", JSON.stringify(response));
   };

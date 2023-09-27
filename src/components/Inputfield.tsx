@@ -45,7 +45,9 @@ const Inputfield = ({
           onAfOnInput={handleChange}
           className={inputFieldStyles.searchfield}
         ></DigiFormInput>
-        <DigiButton slot='button' onAfOnClick={onSubmit}>
+        <DigiButton 
+        slot='button' 
+        onAfOnClick={onSubmit}>
           Sök
         </DigiButton>
         {buttonClicked && currentValue.length < 2 && (
