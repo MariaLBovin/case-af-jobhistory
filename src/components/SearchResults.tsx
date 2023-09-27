@@ -55,6 +55,7 @@ const SearchResults = () => {
   return (
     <section className={searchResultsStyles.results_container}>
       <div className={searchResultsStyles.inner_container}>
+      <Statistics></Statistics>
         <div className={searchResultsStyles.range_selector}>
           <DigiFormSelect
             afLabel='Visa antal träffar'
@@ -70,7 +71,7 @@ const SearchResults = () => {
             <option value='50'>50</option>
           </DigiFormSelect>
         </div>
-        <Statistics></Statistics>
+        
         <ResultList filteredAds={filteredAds}></ResultList>
         <DigiNavigationPagination
           afTotalPages={totaltPages}
