@@ -1,0 +1,7 @@
+@media (width >=1024px){
+    .divWrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
