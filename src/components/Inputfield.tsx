@@ -8,7 +8,7 @@ import {
   DigiFormInput,
   DigiFormValidationMessage,
 } from "@digi/arbetsformedlingen-react";
-import inputFieldStyles from "@/styles/InputField.module.css";
+import inputFieldStyles from "@/styles/Inputfield.module.css";
 import { useState } from "react";
 import { DigiFormInputCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { ISearchProps } from "@/models/ISearchProps";
@@ -60,4 +60,4 @@ const Inputfield = ({
   );
 };
 
-export default Inputfield
+export default Inputfield;
