@@ -1,11 +1,7 @@
 import { useState } from "react";
 import datePickerStyles from "@/styles/DatePicker.module.css";
 import { DateSelector } from "@/components/DateSelector";
-
-export interface ISearchDates {
-  from?: string;
-  to?: string;
-}
+import { ISearchDates } from "@/models/ISearchDates";
 
 export interface IDateSelectorProps {
   handleSelectedDates: (dates: ISearchDates) => void;

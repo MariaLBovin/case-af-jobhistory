@@ -2,7 +2,7 @@ import { teamMembers } from "@/arrays/teammembers";
 import { Members } from "@/components/Members";
 import contactStyles from '../styles/Contact.module.css'
 
-export const Team = () => {
+const Team = () => {
   return (
     <>
       <ul className={contactStyles.ul}>
@@ -13,3 +13,4 @@ export const Team = () => {
     </>
   );
 };
+export default Team;

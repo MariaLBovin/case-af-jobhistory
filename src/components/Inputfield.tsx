@@ -13,7 +13,7 @@ import { useState } from "react";
 import { DigiFormInputCustomEvent } from "@digi/arbetsformedlingen/dist/types/components";
 import { ISearchProps } from "@/models/ISearchProps";
 
-export const Inputfield = ({
+const Inputfield = ({
   handleSubmit,
   handleSearchText,
   currentValue,
@@ -44,11 +44,10 @@ export const Inputfield = ({
           afType={FormInputType.TEXT}
           onAfOnInput={handleChange}
           className={inputFieldStyles.searchfield}
-        >
-          <DigiButton slot='button' onAfOnClick={onSubmit}>
-            Sök
-          </DigiButton>
-        </DigiFormInput>
+        ></DigiFormInput>
+        <DigiButton slot='button' onAfOnClick={onSubmit}>
+          Sök
+        </DigiButton>
         {buttonClicked && currentValue.length < 2 && (
           <DigiFormValidationMessage
             afVariation={FormValidationMessageVariation.ERROR}
@@ -60,3 +59,5 @@ export const Inputfield = ({
     </>
   );
 };
+
+export default Inputfield
