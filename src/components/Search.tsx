@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { DatePicker } from "@/components/DatePicker";
 import { IGetJobAds } from "@/models/IGetJobAds";
 import searchStyles from "../styles/Search.module.css";
-import adsCollector from "@/services/adsCollector";
+import adsCollector from "@/services/adsCollectorService";
 import { ISearchDates } from "@/models/ISearchDates";
 
 const Search = () => {
