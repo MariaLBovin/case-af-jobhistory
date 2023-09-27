@@ -1,3 +1,8 @@
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
 .divWrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -5,7 +10,7 @@
   margin-inline: 1rem;
 }
 
-ul {
+.membersList {
   max-width: 400px;
   width: 100%;
   margin: 0 auto !important;
@@ -15,12 +20,7 @@ ul {
   .divWrapper {
     grid-template-columns: 1fr 1fr;
     margin: 0 auto;
-    max-width: 1440px;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
+    max-width: 1024px;
   }
 
 }

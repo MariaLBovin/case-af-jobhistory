@@ -5,7 +5,7 @@ import Team from './Team';
 
 const Contact = () => {
 	return (
-		<div>
+		<div className={contactStyles.container}>
 			<GoBackButton></GoBackButton>
 			<div className={contactStyles.divWrapper}>
 				<AboutProject></AboutProject>
