@@ -3,17 +3,21 @@
     margin: 0 auto;
     margin-block: 1rem;
 }
+
 .contactButton {
-    max-width: 430px;
+    max-width: 400px;
     margin: 0 auto;
     margin-block: 1rem;
 }
-@media (width >=1024px){
-    .button{
-        max-width: 72dvw;
+
+@media (width >=1024px) {
+    .button {
+        max-width: 1024px;
     }
+
     .contactButton {
-        max-width: 72dvw;
+        max-width: 1024px;
+        padding-inline-start: 3.25rem;
     }
-    
+
 }
