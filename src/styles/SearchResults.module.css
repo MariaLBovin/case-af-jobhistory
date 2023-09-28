@@ -17,13 +17,21 @@
   /* align-items: center; */
   padding: 35px 0 35px 0;
 }
+/* .selector_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+} */
 
 .range_selector {
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
 }
 
 .range_selector_inner {
   max-width: 150px;
+}
+.button_div {
+  padding: 23px;
 }

@@ -23,12 +23,12 @@ export const AboutProject = () => {
                     För att göra detta, använder vi request-parametrar för publiceringsdatum och arbetsgivare.
                 </p>
                 <h3>Paginering</h3>
-                <p>Vi tar emot totalt 100 annonser och använder oss av paginering och filtrering av resultat för att presentera dessa 
+                <p>Vi tar emot max 2000 annonser och använder oss av paginering och filtrering av resultat för att presentera dessa 
                     på ett lättillgängligt och tydligt vis.
                 </p>
                 <h3>Presentation</h3>
                 <p>Resultaten presenteras som en lista. För att läsa mer om den specifika annonsen klickar man på vald annons. Från annonsen
-                    kan man sedan gå tillbaka till resultatlistan.
+                    kan man sedan gå tillbaka till resultatlistan. Man kan även välja att få se resultat / år i ett diagram.
                 </p>
             </p>
         </article>

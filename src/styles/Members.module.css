@@ -1,34 +1,34 @@
-.ul {
-    margin-block: 1rem;
-}
 .li {
+    box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    background-color: white;
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-bottom: 30px;
-    margin-block: 1rem;
-    max-width: 400px;
+    margin: 0 auto;
+    margin-block-end: 1rem;
+    width: 100%;
     height: auto;
-    padding-block: 1rem;
+    padding: 1rem;
+    background-color: white;
 }
+
 .article {
     flex-direction: column;
     margin-left: 20px
 }
+
 .img {
     height: 100px;
 }
+
 .div {
     flex-direction: row;
 
 }
+
 .div img {
-    margin-right: 10px;
+    margin-inline-end: 10px;
 }
 
-@media (width >=1024px){
+@media (width >=1024px) {
     .li {
         margin-right: auto;
     }
