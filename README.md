@@ -1,26 +1,38 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/0FG3pVTS)
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=11866236&assignment_repo_type=AssignmentRepo)
+# About Arbetsgivardata
 
-# Case för AF med hjälp av Jobtech
+## Background
 
-I detta projekt kommer ni att välja ett av två case att arbeta med. Läs nog igenom beskrivningen av varje case innan ni bestämmer er.
+Arbetsförmedlingen has opened up its extensive databases of job advertisements and job postings that have been published over an extended period. This data source is of significant value for various purposes, including gaining insights into the job market, analyzing trends, and developing applications that can assist job seekers and employers.
 
-## Case 1 - Matcha fram relaterade yrken utifrån utbildningstitel och utbildningsbeskrivning
+## Project Overview
 
-Står beskriven i cases/Case 1.pdf
+In this project, we use Arbetsförmedlingen's Historical Job Ads API to search for job postings published by a specific employer within a specified time frame. The aim is to create a useful application that can filter and present relevant job ads for both students and professionals. As part of the presentation we are using components from Arbetsförmedlingens Designsytem. This was a requirement from the customer.
 
-## Case 2 - Använd Historical job ads API:et för att söka fram de platsannonser som en viss arbetsgivare publicerat under ett visst tidsintervall
+## Project Specifications
 
-Står beskriven i cases/Case 2.pdf
+### Searching for Job Ads
 
-## Observera
+We use the API's endpoint, historical.api.jobtechdev.se/search, to search for job ads published by a specific employer within a given time interval. To achieve this, we make use of request parameters for publication date and employer.
 
-Oavsett vilket case ni väljer behöver ni använda er av Arbetsförmedlingens Designsystem där ni har ett antal färdiga komponenter till ert förfogande. Det är viktigt att ni inte använder Arbetsförmedlingens färger och logotyp. Däremot får ni gärna använda er egen färgpalett och logga utefter behov.
+### Pagination
 
-# Beskrivning, instruktionert och tankegångar från teamet
+We retrieve a maximum of 2100 ads and employ pagination and result filtering to present them in an easily accessible and clear manner.
 
-## Teknikval
+### Presentation
 
-### Context
+The results are presented as a list. To learn more about a specific ad, one can click on the selected ad. From the ad, you can then return to the result list.
 
-För att komma åt resultat appen får från api´t utan proppdriling har vi valt att lägga datan i ett context.
+## Arbetsgivardata 2.0
+
+Here are some suggestions for what could be done as version 2.0:
+
+- Add a route for statistics where users can, among other things, compare the employer's job advertisements per year with the industry's average for the same year to see how the company compares to its surroundings.
+- Adding more employers to the search to compare the number of job advertisements against each other.
+- Sort results by relevance.
+- Establish uniform naming of variables
+- Refactor search to include form elements for better submit handling.
+- Designsystem components only work in the development environment. This issue need to be adressed for deploy environment.
+
+## Tech stack
+
+[![My Skills](https://skillicons.dev/icons?i=vite,react,ts,html,css,figma,git,github,vscode,codepen)](https://skillicons.dev)
