@@ -1,7 +1,26 @@
-@media (width >=1024px){
-    .divWrapper {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-    }
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.divWrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1em;
+  margin-inline: 1rem;
+}
+
+.membersList {
+  max-width: 400px;
+  width: 100%;
+  margin: 0 auto !important;
+}
+
+@media (width >=1024px) {
+  .divWrapper {
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+    max-width: 1024px;
+  }
 
 }
