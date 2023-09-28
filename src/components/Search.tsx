@@ -14,14 +14,19 @@ const Search = () => {
 	const navigate = useNavigate();
 
 	const handleSubmit = async () => {
-		const response = await adsCollector(searchBody);
-
+		setAdsResponse({
+			total: {
+				value: 0,
+			},
+			hits: [],
+		});
 		const pageValue = searchBody.page || 1;
 		const resultValue = searchBody.result || 10;
-		setAdsResponse(response);
 
 		navigate(`/search-results/${pageValue}/${resultValue}`);
 		// localStorage.setItem("search", JSON.stringify(searchBody));
+		const response = await adsCollector(searchBody);
+		setAdsResponse(response);
 	};
 
 	const handleSearchText = (data: string) => {
