@@ -15,6 +15,7 @@ import {
 import { useContext, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { IJobAdsContext, JobAdsContext } from '../context/JobAdsContext';
+import { LoadingSpinner } from './LoadingSpinner';
 import { ResultList } from './ResultList';
 import Statistics from './Statistics';
 
@@ -81,7 +82,12 @@ const SearchResults = () => {
 					</DigiFormSelect>
 				</div>
 
-				<ResultList filteredAds={filteredAds}></ResultList>
+				{adsResponse.total.value >= 0 ? (
+					<ResultList filteredAds={filteredAds}></ResultList>
+				) : (
+					<LoadingSpinner />
+				)}
+
 				<DigiNavigationPagination
 					afTotalPages={totaltPages}
 					afInitActive-page={currentPage}
