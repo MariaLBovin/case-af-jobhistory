@@ -16,7 +16,7 @@ const Search = () => {
 	const handleSubmit = async () => {
 		setAdsResponse({
 			total: {
-				value: 0,
+				value: -1,
 			},
 			hits: [],
 		});
